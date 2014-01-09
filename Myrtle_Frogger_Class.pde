@@ -1,3 +1,0 @@
-class Myrtle_Frogger
-{
-}
