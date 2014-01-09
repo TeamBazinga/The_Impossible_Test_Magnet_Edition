@@ -1,12 +1,12 @@
 class Student {
   PImage kid;
   PVector loc, vel, acc;
-  float scale;
+  float scale = .4;
 
     Student() {
     kid = loadImage("diver.png");
     loc = new PVector(width/2, height/4);
-    kid.resize(kid.length * scale, kid.height * scale)
+    kid.resize(int(kid.width * scale), int(kid.height * scale));
   }
 
   void display() {
@@ -22,6 +22,8 @@ class Student {
     }
     if (keyPressed && key == 'a') {
       loc.x -=2;
+      image(kidLeft, loc.x, loc.y);
+
     }
     if (keyPressed && key == 'd') {
       loc.x += 2;
