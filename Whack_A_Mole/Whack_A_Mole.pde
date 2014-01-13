@@ -5,13 +5,15 @@ Hand h;
 //declare integers
 int rectx = 250;
 int recty = 325;
+int oldTime = 0;
 
 void setup()
 {
   size(displayWidth, displayHeight);
-  h = new Hand();
-  colorMode(360, 100, 100, 100);
+  textAlign(CENTER);
+  colorMode(HSB, 360, 100, 100, 100);
   imageMode(CENTER);
+  h = new Hand();
 }
 
 void draw()
@@ -23,5 +25,9 @@ void draw()
   {
     oldTime = millis();
     papers.add(new Paper());
+    for (int i = papers.size()-1; i >=0; i--) {
+      Paper p = papers.get(i);
+      p.show();
+    }
   }
 }
