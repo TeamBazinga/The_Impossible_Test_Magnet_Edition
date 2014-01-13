@@ -1,6 +1,5 @@
 class Hand
 {
-  PVector loc;
   PImage handpic;
 
   Hand()

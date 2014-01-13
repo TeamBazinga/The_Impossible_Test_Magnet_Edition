@@ -1,4 +1,8 @@
+//declare an ArrayList
+ArrayList<Paper> papers = new ArrayList<Paper>();
+//declare class objects
 Hand h;
+//declare integers
 int rectx = 250;
 int recty = 325;
 
@@ -13,13 +17,11 @@ void setup()
 void draw()
 {
   background(0);
-  //paper1
-  rect(width/4-rectx, height/2 - recty/2, rectx, recty);
-  //paper2
-  rect(width/2-rectx/2, height/2 - recty/2, rectx, recty);
-  //paper3
-  rect(3*width/4, height/2 - recty/2, rectx, recty);
   //hand
   h.show();
-  
+  if (millis() - oldTime >= 500)
+  {
+    oldTime = millis();
+    papers.add(new Paper());
+  }
 }
