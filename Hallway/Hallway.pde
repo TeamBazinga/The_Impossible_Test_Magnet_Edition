@@ -15,12 +15,11 @@ void setup() {
   colorMode(HSB, 360, 100, 100, 100);
 }
 void draw() {
-  background(360, 100, 100);
+  background(360, 0,0);
+  fill(360,100,100);
+  rect(width/2,height/2,450,450);
   fill(0);
-  rect(0,0,r,r/2);
-  rect(width,0,r,r/2);
-  rect(0,height,r,r/2);
-  rect(width,height,r,r/2);
+  rect(width/2,height/2,300,300);
   t1.show();
 }
 
