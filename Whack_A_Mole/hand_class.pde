@@ -5,7 +5,7 @@ class Hand
 
   Hand()
   {
-    handpic = loadImage("mug.jpg");
+    handpic = loadImage("handpic.png");
   }
 
   void show()
