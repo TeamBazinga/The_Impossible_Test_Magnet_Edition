@@ -3,9 +3,10 @@ ArrayList<Paper> papers = new ArrayList<Paper>();
 //declare class objects
 Hand h;
 //declare integers
-int rectx = 250;
-int recty = 325;
+int rectx = 200;
+int recty = 260;
 int oldTime = 0;
+boolean papershow = false;
 
 void setup()
 {
@@ -19,10 +20,21 @@ void setup()
 void draw()
 {
   background(0);
-  if (millis() - oldTime >= 500)
+  if (millis() - oldTime >= 1000)
+  {
+    papershow = true;
+  }
+  if (millis() - oldTime >= 1500)
+  {
+    papershow = false;
+    oldTime = millis();
+  }
+  if (papershow)
   {
     papers.add(new Paper());
-    for (int i = papers.size() - 1; i >= papers.size() - 4; i--) {
+    papers.add(new Paper());
+    papers.add(new Paper());
+    for (int i = 0; i < 3; i++) {
       Paper p = papers.get(i);
       p.show();
     }
