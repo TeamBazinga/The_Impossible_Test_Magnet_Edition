@@ -4,12 +4,11 @@ class Paper
 
   Paper()
   {
-    
+    loc = new PVector(random(0, width-rectx), random(0, height-recty));
   }
 
   void show()
   {
-    rect(random(rectx, width-rectx), random(recty, height-recty), rectx, recty);
-    
+    rect(loc.x, loc.y, rectx, recty);
   }
 }

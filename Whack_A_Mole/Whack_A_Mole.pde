@@ -19,15 +19,15 @@ void setup()
 void draw()
 {
   background(0);
-  //hand
-  h.show();
   if (millis() - oldTime >= 500)
   {
-    oldTime = millis();
     papers.add(new Paper());
-    for (int i = papers.size()-1; i >=0; i--) {
+    for (int i = papers.size() - 1; i >= papers.size() - 4; i--) {
       Paper p = papers.get(i);
       p.show();
     }
   }
+  //hand
+  h.show();
 }
+
