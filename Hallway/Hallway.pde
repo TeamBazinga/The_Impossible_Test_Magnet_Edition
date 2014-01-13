@@ -5,10 +5,12 @@ int wide;
 int high;
 
 Teacher t1;
+Student s1;
 void setup() {
   high=500;
   wide=500;
   t1 = new Teacher();
+  s1 = new Student();
   r=425;
   size(wide,high);
   rectMode(CENTER);
@@ -20,6 +22,7 @@ void draw() {
   rect(width/2,height/2,450,450);
   fill(0);
   rect(width/2,height/2,300,300);
-  t1.show();
+  t1.showt();
+  s1.shows();
 }
 

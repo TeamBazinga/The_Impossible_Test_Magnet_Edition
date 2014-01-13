@@ -16,7 +16,7 @@ class Teacher {
     d=25;
     h=d/1.5;
   }
-  void show() {
+  void showt() {
    
     fill(125, 100, 100);
     //top right
