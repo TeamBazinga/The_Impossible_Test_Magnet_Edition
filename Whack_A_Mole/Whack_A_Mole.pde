@@ -1,3 +1,7 @@
+//NOTE TO GROUP
+//FOR MY PROGRAM, IF DISPLAY SIZE CHANGES, STUFF IS NOT CENTERED. SHOULD WE DEFINE EVERYTHING FROM WIDTH/2, HEIGHT/2??????
+
+
 //declare an ArrayList
 ArrayList<Paper> papers = new ArrayList<Paper>();
 //declare class objects
