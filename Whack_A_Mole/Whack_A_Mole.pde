@@ -31,9 +31,9 @@ void draw()
   }
   if (papershow)
   {
-    papers.add(new Paper());
-    papers.add(new Paper());
-    papers.add(new Paper());
+    papers.add(new Paper(0));
+    papers.add(new Paper(width/4));
+    papers.add(new Paper(width/2));
     for (int i = 0; i < 3; i++) {
       Paper p = papers.get(i);
       p.show();
