@@ -1,14 +1,10 @@
-//NOTE TO GROUP
-//FOR MY PROGRAM, IF DISPLAY SIZE CHANGES, STUFF IS NOT CENTERED. SHOULD WE DEFINE EVERYTHING FROM WIDTH/2, HEIGHT/2??????
-
-
 //declare an ArrayList
 ArrayList<Paper> papers = new ArrayList<Paper>();
 //declare class objects
 Hand h;
 //declare integers
-int rectx = 200;
-int recty = 260;
+int paperx = 200;
+int papery = 260;
 int oldTime = 0;
 boolean papershow = false;
 
@@ -28,17 +24,19 @@ void draw()
   {
     papershow = true;
   }
-  if (millis() - oldTime >= 1500)
+  if (mousePressed)
   {
     papershow = false;
+    
     oldTime = millis();
   }
   if (papershow)
   {
-    papers.add(new Paper(0));
-    papers.add(new Paper(width/4));
-    papers.add(new Paper(width/2));
-    for (int i = 0; i < 3; i++) {
+    papers.add(new Paper(width/4 - paperx/2));
+    papers.add(new Paper(width/2 - paperx/2));
+    papers.add(new Paper(3*width/4 - paperx/2));
+    for (int i = 0; i < 3; i++)
+    {
       Paper p = papers.get(i);
       p.show();
     }
