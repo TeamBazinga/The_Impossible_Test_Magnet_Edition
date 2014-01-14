@@ -5,6 +5,7 @@ Hand h;
 //declare integers
 int paperx = 200;
 int papery = 260;
+int mode;
 int oldTime;
 boolean papershow = false;
 int grade;
@@ -21,6 +22,20 @@ void setup()
 
 void draw()
 {
+  if (mode == 0)
+  {
+    background(360);
+    fill(0, 100, 100);
+    ellipse(width/2, height/2, 225, 225);
+    fill(0);
+    textSize(50);
+    text("Space\nto Start", width/2, height/2 - 25);
+    if (keyPressed && key == ' ')
+    {
+      mode = 1;
+      oldTime = millis();
+    }
+  }
   if (mode == 1)
   {
     background(0);
