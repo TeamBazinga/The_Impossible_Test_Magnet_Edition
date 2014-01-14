@@ -7,6 +7,7 @@ int paperx = 200;
 int papery = 260;
 int oldTime = 0;
 boolean papershow = false;
+int grade;
 
 void setup()
 {
@@ -20,6 +21,7 @@ void setup()
 void draw()
 {
   background(0);
+  grade = millis() - oldTime;
   if (millis() - oldTime >= 1000)
   {
     papershow = true;
@@ -27,7 +29,6 @@ void draw()
   if (mousePressed)
   {
     papershow = false;
-    
     oldTime = millis();
   }
   if (papershow)
@@ -43,5 +44,6 @@ void draw()
   }
   //hand
   h.show();
+  text(grade, width/2, 50);
 }
 
