@@ -1,6 +1,7 @@
 Student s;
 Shark sh;
 Treasure t;
+Over o;
 
 void setup() {
   colorMode(HSB, 360, 100, 100, 100);
@@ -8,6 +9,7 @@ void setup() {
   s = new Student();
   sh = new Shark();
   t = new Treasure();
+  o = new Over();
 }
 
 void draw() {
@@ -24,6 +26,6 @@ void draw() {
   sh.move();
   t.display();
   t.check(s);
-  sh.check(s);
+  sh.check(s,o);
 }
 
