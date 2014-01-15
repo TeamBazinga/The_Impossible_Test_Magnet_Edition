@@ -40,16 +40,8 @@ void draw()
   if (mode == 1)
   {
     background(0);
-    fill(129, 82, 66);
-    textSize(50);
     text("GO!", width/2, 4*height/5);
-    if (keyPressed && key == ' ')
-    {
-      mode = 1;
-      oldTime = millis();
-    }
     timepassed = millis();
-    text(grade, width/2, 50);
     if (millis() - oldTime >= 1000)
     {
       papershow = true;
@@ -57,8 +49,9 @@ void draw()
     if (mousePressed)
     {
       papershow = false;
+      grade = timepassed - 1000;
+      oldTime = millis();
       mode = 0;
-      grade = timepassed;
     }
     if (papershow)
     {
@@ -71,8 +64,15 @@ void draw()
         p.show();
       }
     }
+    fill(129, 82, 66);
+    textSize(50);
+    text(grade, width/2, 50);
     //hand
     h.show();
   }
 }
 
+boolean sketchFullScreen()
+{
+  return true;
+}
