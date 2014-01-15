@@ -27,11 +27,24 @@ class Myrtle_Frogger
     {
       mloc.x-=3;
     }
-}
-void display()
-{
-  ellipse(mloc.x, mloc.y, 40, 40);
-}
+  }
+  void display()
+  {
+    ellipse(mloc.x, mloc.y, 40, 40);
+  }
+  boolean isdead(int i)
+  {
+      car auto = traffic.get(i);
+      if (abs(mloc.y - auto.cloc.y) <= 20 || abs(mloc.x - auto.cloc.y) <= 20)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+    
 }
 
 class car
@@ -41,6 +54,7 @@ class car
   car()
     //colorMode(HSB,360,100,100);
   {
+      rectMode(CENTER);
     int direction = int(random(1, 3));
     if (direction==1)
     {
