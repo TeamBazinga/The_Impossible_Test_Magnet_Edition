@@ -1,7 +1,6 @@
-//start class for the diver
-class Student {
-  //declare variables needed
-  PImage kid;
+
+class Student { //start class for the diver
+  PImage kid;   //declare variables needed
   PImage kidLeft;
   PVector loc, vel, acc;
   float scale = .4;
@@ -9,14 +8,14 @@ class Student {
   boolean right = true;
 
   Student() {
-    kid = loadImage("diver.png");
-    kidLeft = loadImage("DiverLeft.png");
+    kid = loadImage("diver.png"); //image of diver
+    kidLeft = loadImage("DiverLeft.png"); //image of diver facing left
     loc = new PVector(width/2, height/5);
     kid.resize(int(kid.width * scale), int(kid.height * scale));
     kidLeft.resize(int(kid.width * scale1), int(kid.height * scale1));
   }
-  //make the correct orientation of diver appear based on the direction its moving 
-  void display() {
+
+  void display() {   //make the correct orientation of diver appear based on the direction its moving 
     if (right) {
       image(kid, loc.x, loc.y);
     }
@@ -24,8 +23,8 @@ class Student {
       image(kidLeft, loc.x, loc.y);
     }
   }
-  //move the diver in the direction indicated by a certain key
-  void move() {
+
+  void move() {   //move the diver in the direction indicated by a certain key
     if (keyPressed && key == 's') {
       loc.y += 4;
       right = true;
@@ -34,8 +33,6 @@ class Student {
       loc.y -= 4;
       right = true;
     }
-
-
     if (keyPressed && key == 'a') {
       loc.x -=4;
       image(kidLeft, loc.x, loc.y);

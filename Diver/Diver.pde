@@ -1,11 +1,13 @@
 Student s;
 Shark sh;
+Treasure t;
 
 void setup() {
   colorMode(HSB, 360, 100, 100, 100);
   size(displayWidth, displayHeight);
   s = new Student();
   sh = new Shark();
+  t = new Treasure();
 }
 
 void draw() {
@@ -20,5 +22,7 @@ void draw() {
   s.move();
   sh.display();
   sh.move();
+  t.display();
+  t.check(s);
 }
 
