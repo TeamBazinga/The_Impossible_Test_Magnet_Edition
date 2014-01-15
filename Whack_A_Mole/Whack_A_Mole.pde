@@ -9,7 +9,7 @@ int mode;
 int oldTime;
 boolean papershow = false;
 int grade;
-int start;
+int timepassed;
 
 void setup()
 {
@@ -18,13 +18,13 @@ void setup()
   colorMode(HSB, 360, 100, 100, 100);
   imageMode(CENTER);
   h = new Hand();
+  background(0);
 }
 
 void draw()
 {
   if (mode == 0)
   {
-    background(0);
     fill(0, 100, 100);
     ellipse(width/2, 4*height/5, 150, 150);
     fill(0);
@@ -36,17 +36,19 @@ void draw()
       oldTime = millis();
     }
   }
+  
   if (mode == 1)
   {
     background(0);
     fill(129, 82, 66);
+    textSize(50);
     text("GO!", width/2, 4*height/5);
     if (keyPressed && key == ' ')
     {
       mode = 1;
       oldTime = millis();
     }
-    start = millis();
+    timepassed = millis();
     text(grade, width/2, 50);
     if (millis() - oldTime >= 1000)
     {
@@ -55,8 +57,8 @@ void draw()
     if (mousePressed)
     {
       papershow = false;
-      oldTime = millis();
-      grade = start;
+      mode = 0;
+      grade = timepassed;
     }
     if (papershow)
     {
