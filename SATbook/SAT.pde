@@ -3,7 +3,9 @@ int oldtime;//used to determine when a new book is added
 int oldtime2;//used to deterine when you can click 
 boolean click; //sees if mouse if clickes
 int r;//radius of aimer
-int score;//score
+int health;//health
+int points;//score
+int time;//time between next book added changes
 class Teacherclick {
 
   Teacherclick() {
@@ -13,6 +15,8 @@ class Teacherclick {
     click=false;
     oldtime=2000;
     r=100;
+    points=500;//initial score
+    health=3;//health
   }
   void display() {
     //    println(millis()-oldtime );
@@ -20,7 +24,7 @@ class Teacherclick {
     fill(110, 164, 119);
     rect(width/2, 3*height/4, width, height/2);
 
-    if (millis()-oldtime2 > 200) {//book added every 200 milliseconds
+    if (millis()-oldtime2 > 200) {//book added every time milliseconds
       book.add(new Satbook());
       oldtime2=millis();
     }
@@ -30,6 +34,7 @@ class Teacherclick {
       c.load();
       c.move();
       c.die(i);
+      c.scoreboard(i);
     }
 
     if (millis() -oldtime >=500) {//aiming thing
@@ -69,17 +74,24 @@ class Satbook {
     v.add(a);
   }
   void die(int i) {
-    if (click && mouseX<=l.x+r && mouseX>=l.x-r && mouseY<=l.y+110 && mouseY>=l.y-110 && mouseY>=height/2) {
+    if (click && mouseX<=l.x+r && mouseX>=l.x-r && mouseY<=l.y+110 && mouseY>=l.y-110 && mouseY>=height/2) {//dies if SAT is touching aimer
       book.remove(i);
+      points+=10;
     }
   }
-  void lose() {
-    if (l.y>= height) {
-      score-=1;
+  void scoreboard(int i) {
+    text(health, width-100, 100);//print health
+    text(points, 100, 100);//print points
+    if (l.y>= height) {//lose points
+    book.remove(i);//booke go away when hit bottom
+      health-=1;
     }
-    if (score<=0) {
+    if (health<=0) {//gameover reason
       println("GAMEOVER");
       //        gameover;//************************************this needs to be fixed.
+    }
+    if (points>=2400) {//winning reason
+      println("WIN");
     }
   }
 }
