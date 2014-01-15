@@ -1,9 +1,9 @@
 ArrayList<Satbook> book = new ArrayList<Satbook>();
-int oldtime;
-int oldtime2;
-boolean click;
-int r;
-int score;
+int oldtime;//used to determine when a new book is added
+int oldtime2;//used to deterine when you can click 
+boolean click; //sees if mouse if clickes
+int r;//radius of aimer
+int score;//score
 class Teacherclick {
 
   Teacherclick() {
@@ -20,27 +20,27 @@ class Teacherclick {
     fill(110, 164, 119);
     rect(width/2, 3*height/4, width, height/2);
 
-    if (millis()-oldtime2 > 200) {
+    if (millis()-oldtime2 > 200) {//book added every 200 milliseconds
       book.add(new Satbook());
       oldtime2=millis();
     }
 
-    for (int i= book.size()-1; i>=0;i--) {
+    for (int i= book.size()-1; i>=0;i--) {//make books move and die when clicked
       Satbook c= book.get(i);
       c.load();
       c.move();
       c.die(i);
     }
 
-    if (millis() -oldtime >=500) {
+    if (millis() -oldtime >=500) {//aiming thing
       fill(0, 255, 120, 50);
       ellipse(mouseX, mouseY, r, r);
-      if (mousePressed && millis() -oldtime >=500) {
+      if (mousePressed && millis() -oldtime >=500) {//click only allowed every 500 seconds 
         click=true;
         oldtime=millis();
       }
     }
-    else {
+    else {//can't kill if not 500 seconds
       click=false;
     }
   }
@@ -54,11 +54,11 @@ class Satbook {
 
 
   Satbook() {
-    sat=loadImage("studyguide_web_cover2.png");
+    sat=loadImage("studyguide_web_cover2.png");//SAT book image
     sat.resize(int(sat.width*scale), int(sat.height*scale));
-    l =new PVector(width/2, 100);
-    v =new PVector(random(-0.5, 0.5), random(0, -1));
-    a =new PVector(0, 0.001);
+    l =new PVector(width/2, 100);//location
+    v =new PVector(random(-0.5, 0.5), random(0, -1));//velocity
+    a =new PVector(0, 0.001);//acceleration
   }
   void load() {
     image(sat, l.x, l.y, sat.width, sat.height);
@@ -75,7 +75,7 @@ class Satbook {
   }
   void lose() {
     if (l.y>= height) {
-      score-1=score;
+      score-=1;
     }
     if (score<=0) {
       println("GAMEOVER");
