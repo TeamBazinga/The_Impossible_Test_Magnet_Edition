@@ -24,12 +24,12 @@ void draw()
 {
   if (mode == 0)
   {
-    background(360);
+    background(0);
     fill(0, 100, 100);
-    ellipse(width/2, height/2, 225, 225);
+    ellipse(width/2, 4*height/5, 150, 150);
     fill(0);
-    textSize(50);
-    text("Space\nto Start", width/2, height/2 - 25);
+    textSize(30);
+    text("Space\nto Start", width/2, 4*height/5 - 15);
     if (keyPressed && key == ' ')
     {
       mode = 1;
@@ -39,6 +39,13 @@ void draw()
   if (mode == 1)
   {
     background(0);
+    fill(129, 82, 66);
+    text("GO!", width/2, 4*height/5);
+    if (keyPressed && key == ' ')
+    {
+      mode = 1;
+      oldTime = millis();
+    }
     start = millis();
     text(grade, width/2, 50);
     if (millis() - oldTime >= 1000)
