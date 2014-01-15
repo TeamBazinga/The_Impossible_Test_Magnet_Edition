@@ -3,7 +3,8 @@ int y;
 int r;
 int wide;
 int high;
-
+ 
+ 
 Teacher t1;
 Student s1;
 void setup() {
