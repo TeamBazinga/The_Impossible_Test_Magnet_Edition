@@ -6,6 +6,7 @@ class Student { //start class for the diver
   float scale = .4;
   float scale1 = 1.05;
   boolean right = true;
+  boolean alive = true;
 
   Student() {
     kid = loadImage("diver.png"); //image of diver
@@ -16,6 +17,7 @@ class Student { //start class for the diver
   }
 
   void display() {   //make the correct orientation of diver appear based on the direction its moving 
+  if(alive) {
     if (right) {
       image(kid, loc.x, loc.y);
     }
@@ -23,7 +25,8 @@ class Student { //start class for the diver
       image(kidLeft, loc.x, loc.y);
     }
   }
-
+  }
+  
   void move() {   //move the diver in the direction indicated by a certain key
     if (keyPressed && key == 's') {
       loc.y += 4;

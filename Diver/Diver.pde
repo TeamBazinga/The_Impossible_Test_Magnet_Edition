@@ -24,5 +24,6 @@ void draw() {
   sh.move();
   t.display();
   t.check(s);
+  sh.check(s);
 }
 
