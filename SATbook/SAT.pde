@@ -20,14 +20,14 @@ class Teacherclick {
     r=100;
     points=500;//initial score
     health=3;//health
-    interval=500;
+    interval=500; 
+    run=false;
   }
   void instructions() {
     fill(255, 229, 109);
     rect(width/2, height/2, width, height); 
     fill(0, 0, 0);
     text("alala", 100, 100);
-    run=false;
     if (mousePressed) {
       run=true;
     }
