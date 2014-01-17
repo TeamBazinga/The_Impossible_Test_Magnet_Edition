@@ -17,16 +17,16 @@ class Student { //start class for the diver
   }
 
   void display() {   //make the correct orientation of diver appear based on the direction its moving 
-  if(alive) {
-    if (right) {
-      image(kid, loc.x, loc.y);
-    }
-    else {
-      image(kidLeft, loc.x, loc.y);
-    }
+   
+      if (right) {
+        image(kid, loc.x, loc.y);
+      }
+      else {
+        image(kidLeft, loc.x, loc.y);
+      }
+    
   }
-  }
-  
+
   void move() {   //move the diver in the direction indicated by a certain key
     if (keyPressed && key == 's') {
       loc.y += 4;

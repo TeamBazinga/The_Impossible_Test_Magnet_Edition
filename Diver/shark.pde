@@ -4,7 +4,7 @@ class Shark {
 
   Shark() {
     shark = loadImage("shark.png");
-    loc = new PVector((random(width)), random(height));
+    loc = new PVector((random(width)), random(height - height/5));
 
   } 
 
@@ -26,7 +26,7 @@ void check(Student s, Over o) {
     o.over = true; //put the game over screen on 
   }
 
-  println(o.over);
+
 }
 
 }

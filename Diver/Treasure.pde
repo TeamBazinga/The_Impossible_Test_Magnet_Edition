@@ -21,7 +21,6 @@ class Treasure {
  void check(Student s) {
   if(s.loc.x >= loc.x - homework.width/2 && s.loc.x <= loc.x + homework.width/2 && s.loc.y >= loc.y - homework.height/2) { //if the diver touches the homework
      show = false; // do not show the homework anymore
-    
   }
  }
 }
