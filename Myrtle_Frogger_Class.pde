@@ -30,12 +30,13 @@ class Myrtle_Frogger
   }
   void display()
   {
+    fill(143,100,100);
     ellipse(mloc.x, mloc.y, 40, 40);
   }
   boolean isdead(int i)
   {
       car auto = traffic.get(i);
-      if (abs(mloc.y - auto.cloc.y) <= 20 || abs(mloc.x - auto.cloc.y) <= 20)
+      if (abs(mloc.y - auto.cloc.y) <= 63 && abs(mloc.x - auto.cloc.x) <= 63)
       {
         return true;
       }
