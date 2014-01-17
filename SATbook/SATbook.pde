@@ -7,6 +7,7 @@ void setup(){
 }
 void draw()
 {
+  t.instructions();
   t.display();
 }
 
