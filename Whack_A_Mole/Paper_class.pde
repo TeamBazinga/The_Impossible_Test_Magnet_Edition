@@ -4,7 +4,6 @@ class Paper
 
   Paper(int x)
   {
-    textSize(50);
     loc = new PVector(x, height/2 - papery/2);
   }
 
