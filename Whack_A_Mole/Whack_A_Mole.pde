@@ -61,9 +61,11 @@ void draw()
   {
     background(0);
     fill(129, 82, 66);        //green fill for "GO!"
-    text("GO!", width/2, 4*height/5);
+    text("Ready...", width/2, height/5);
     if (millis() - start1 >= delay)        //1 second after the user presses space to start the game, show papers 
     {
+      background(0);
+      text("GO!", width/2, height/5);
       papershow = true;
     }
     if (mousePressed && mode == 1)        //stop the first level when user clicks on paper
@@ -77,9 +79,11 @@ void draw()
   {
     background(0);
     fill(129, 82, 66);
-    text("GO!", width/2, 4*height/5);
+    text("Ready...", width/2, height/5);
     if (millis() - start2 >= delay)
     {
+      background(0);
+      text("GO!", width/2, height/5);
       papershow = true;
     }
     if (mousePressed && mode == 3)
@@ -93,9 +97,11 @@ void draw()
   {
     background(0);
     fill(129, 82, 66);
-    text("GO!", width/2, 4*height/5);
+    text("Ready...", width/2, height/5);
     if (millis() - start3 >= delay)
     {
+      background(0);
+      text("GO!", width/2, height/5);
       papershow = true;
     }
     if (mousePressed && mode == 5)
