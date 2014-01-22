@@ -14,14 +14,10 @@ class Teacher {
   void showt() {
 
     fill(125, 100, 100);
-    //bottom right
-    ellipse(loc1.x, height/2+(height/3), d, d);
     //top left
     ellipse(loc2.x, height/2-(height/3), d, d);    
     //top right
     ellipse(loc1.x, height/2-(height/3)-40, d, d); 
-    //bottom left
-    ellipse(loc2.x, height/2+(height/3)+40, d, d);
     //right up
     ellipse(width/2+(width/3)+40, loc2.x, d, d);
     //right down
@@ -32,14 +28,10 @@ class Teacher {
     ellipse(width/2-(width/3), loc2.x, d, d);
 
     fill(34, 94, 47);
-    //bottom right
-    ellipse(loc1.x, height/2+(height/3), h, h);
     //top left
     ellipse(loc2.x, height/2-(height/3), h, h);    
     //top right
     ellipse(loc1.x, height/2-(height/3)-40, h, h); 
-    //bottom left
-    ellipse(loc2.x, height/2+(height/3)+40, h, h);
     //right up
     ellipse(width/2+(width/3)+40, loc2.x, h, h);
     //right down

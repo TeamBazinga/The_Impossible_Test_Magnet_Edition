@@ -4,11 +4,17 @@ int r;
 int wide;
 int high;
 int starth;
+int rw1,rh1,rw2,rh2,rr3;
  
  
 Teacher t1;
 Student s1;
 void setup() {
+  rw1=450;
+  rh1=450;
+  rw2=300;
+  rh2=375;
+  rr3=75;
   starth = 0;
   high=500;
   wide=500;
@@ -33,9 +39,9 @@ background(125,100,100);
 if(starth>0){
   background(360, 0,0);
   fill(360,100,100);
-  rect(width/2,height/2,450,450);
+  rect(width/2,height/2,rw1,rh1);
   fill(0);
-  rect(width/2,height/2,300,300);
+  rect(width/2,height/2+height/12.5,rw2,rh2);
   t1.showt();
   s1.shows();
 }
