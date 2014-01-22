@@ -8,7 +8,7 @@ class Teacher {
     loc1 = new PVector (width/2, height/2);
     loc2 = new PVector (width/2, height/2);
     vel1 = new PVector (2, -2);
-    d=25;
+    d2=25;
     h=d/1.5;
   }
   void showt() {
