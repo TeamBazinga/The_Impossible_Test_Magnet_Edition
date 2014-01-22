@@ -10,8 +10,10 @@ int score1, score2, score3, avgscore;
 int start1, start2, start3;
 int end1, end2, end3;
 int delay;
-int mode;        //0 is the start screen. 1,3, and 5 are for playing. 2 and 4 are for pausing in between levels 
+int mode;        //0 is the start screen. 1,3, and 5 are for playing. 2 and 4 are for pausing in between levels
+int gamelevel;
 boolean papershow;        //declare booleans
+boolean mainscreen;
 
 void setup()
 {
@@ -25,10 +27,12 @@ void setup()
   a2 = new A();
   a3 = new A();
   papershow = false;        //set papershow to false so it doesn't run in the beginning
+  mainscreen = false;
   paperx = 200;
   papery = 260;
   mode = 0;
   delay = 1000;
+  gamelevel = WHATEVER MY GAME LEVEL IS ASLFJAOEIFJAOSIJVOASIVJOAWJIOAJEFOIJEWOAIEJOI
 }
 
 void draw()
@@ -137,11 +141,29 @@ void draw()
     {
       fill(129, 82, 66);
       text("YOU WIN!!!", width/2, 3*height/4);
+      fill(0, 100, 100);
+      ellipse(4*width/5, 4*height/5, 224, 224);
+      fill(360);
+      textSize(50);
+      text("NEXT\nLEVEL", 4*width/5, 4*height/5-25);
+      if (mousePressed && dist(mouseX, mouseY, 4*width/5, 4*height/5-25) <= 112)
+      {
+        gamelevel++;
+      }
     }
     else
     {
       fill(0, 100, 100);
       text("YOU LOSE!!!", width/2, 3*height/4);
+      fill(0, 100, 100);
+      ellipse(4*width/5, 4*height/5, 224, 224);
+      fill(360);
+      textSize(50);
+      text("MAIN\nSCREEN", 4*width/5, 4*height/5-25);
+      if (mousePressed && dist(mouseX, mouseY, 4*width/5, 4*height/5-25) <= 112)
+      {
+        mainscreen = true;
+      }
     }
   }
   if (papershow)        //DISPLAYING THE PAPERS
