@@ -6,7 +6,7 @@ int high;
 int starth;
 int rw1, rh1, rw2, rh2, rr3;
 boolean mainscreen;
-
+//i
 Teacher t1;
 Student s1;
 void setup() {
