@@ -11,6 +11,11 @@ class Student {
     fill(204, 53, 95);
     ellipse(loc.x, loc.y, d, d);
   }
- 
+  
+  void touch(){
+   if(loc.x+d/2>width-width/20 || loc.x-d/2<width/20 || loc.y+d/2>height-height/20 || loc.y-d/2<height/20){
+   mainscreen = true;  
+  }
+  }
 }
 
