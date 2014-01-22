@@ -23,6 +23,7 @@ void setup() {
   r=425;
   size(wide,high);
   rectMode(CENTER);
+  textAlign(CENTER);
   colorMode(HSB, 360, 100, 100, 100);
 }
 void draw() {
@@ -33,15 +34,20 @@ void draw() {
     }
   }
 if(starth ==0){
-  
-background(125,100,100);  
+background(50,100,100);  
+fill(125,100,100);
+rect(width-width/8,height-height/8,rr3,rr3);
+text("Click the box to start!",width/2,height/2);
 }
+
 if(starth>0){
   background(360, 0,0);
   fill(360,100,100);
   rect(width/2,height/2,rw1,rh1);
   fill(0);
   rect(width/2,height/2+height/12.5,rw2,rh2);
+ fill(125,100,100);
+rect(width-width/8,height-height/8,rr3,rr3);
   t1.showt();
   s1.shows();
 }
