@@ -25,8 +25,10 @@ class Student {
     if (dist(loc.x, loc.y, t.loc2.x, tlth)< 20 || dist(loc.x, loc.y, t.loc1.x, (tlth)-o)< 20 || dist(loc.x, loc.y, rdrw, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrw+40, t.loc2.x)< 20 || dist(loc.x, loc.y, rdrnw-o, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrnw, t.loc2.x)< 20) {
       mainscreen = true;
     }
-    if (loc.y-d2/2>width-100 && loc.x<width/2) {
-      gamelevel++;
+    if (mousePressed) {
+      if (loc.y-d2/2>width-100 && loc.x<width/2) {
+        gamelevel++;
+      }
     }
   }
 }

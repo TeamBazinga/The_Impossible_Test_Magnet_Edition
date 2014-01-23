@@ -28,14 +28,15 @@ void draw() {
           starth++;
         }
       }
-      if (starth ==0) {
+      if (starth == 0) {
         background(50, 100, 100);  
         fill(125, 100, 100);
         rect(width-width/8, height-height/8, rr3, rr3);
+        fill(0);
         textSize(45);
         text("Click the box to start!", width/2, height/2);
         textSize(25);
-        text("Get to the red square, \n but dont touch the teachers!", width/2, height/2+height/8);
+        text("Get to the other green square, \n but dont touch the teachers!", width/2, height/2+height/8);
       }
 
       if (starth>0) {
@@ -48,6 +49,8 @@ void draw() {
         rect(width-width/8, height-height/8, rr3, rr3);
         fill(125, 100, 100);
         rect(width/8, height-height/8, rr3, rr3);
+        fill(0,0,100);
+        text("Click the other \n green box.", width/2, height/2);
         t1.showt();
         s1.shows();
         s1.touch(t1);
