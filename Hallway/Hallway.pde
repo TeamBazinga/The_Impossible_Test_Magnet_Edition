@@ -1,27 +1,16 @@
-int x;
-int y;
-int r;
-int wide;
-int high;
-int starth;
-int rw1, rh1, rw2, rh2, rr3;
+int r=425;
+int wide=500;
+int high=500;
+int starth=0;
+int rw1=450, rh1=450, rw2=300, rh2=375, rr3=75;
 boolean mainscreen;
 
 Teacher t1;
 Student s1;
 void setup() {
   mainscreen=false;
-  rw1=450;
-  rh1=450;
-  rw2=300;
-  rh2=375;
-  rr3=75;
-  starth = 0;
-  high=500;
-  wide=500;
   t1 = new Teacher();
   s1 = new Student();
-  r=425;
   size(wide, high);
   rectMode(CENTER);
   textAlign(CENTER);
