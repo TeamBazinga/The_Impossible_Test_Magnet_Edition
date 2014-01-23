@@ -200,7 +200,18 @@ void keyPressed()
 {
   if (key == ' ')        //the space key is the start button 
   {
-    mode++;        //increase the mode
+    if (mode == 0)    //increase the mode
+    {
+      mode = 1;
+    }
+    if (mode == 2)
+    {
+      mode = 3;
+    }
+    if (mode == 4)
+    {
+      mode = 5;
+    }
     if (mode == 1)
     {
       start1 = time;        //record the time when the space key is pressed (which is when the first level is started)
