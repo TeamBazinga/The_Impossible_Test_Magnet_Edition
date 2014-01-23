@@ -1,8 +1,9 @@
-ddddStudent s;
+Student s;
 ArrayList<Shark> sharks;
 Treasure t;
 Over o;
 boolean win;
+float timer;
 
 void setup() {
   colorMode(HSB, 360, 100, 100, 100);
@@ -15,6 +16,7 @@ void setup() {
   s = new Student();
   t = new Treasure();
   o = new Over();
+  timer = 30000;
 }
 
 void draw() {
@@ -52,5 +54,20 @@ void draw() {
   }
   //sh.check(s, o);
   o.button(s);
+  fill(220,0,100);
+  rectMode(LEFT);
+  textAlign(LEFT);
+  textSize(30);
+  rect(0,75,((timer-millis())/30000)*200,30);
+  fill(54,5,74);
+  text("Oxygen",0,65);
+  rectMode(CENTER);
+  if(millis() > timer)
+  {
+    win= false;
+    s.alive=false;
+    o.over = true;
+  }
+  println(timer-millis());
 }
 

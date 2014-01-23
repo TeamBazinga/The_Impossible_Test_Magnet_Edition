@@ -23,6 +23,7 @@ class Shark {
 void check(Student s, Over o) {
   if(s.loc.x >= loc.x - shark.width/2 && s.loc.x <= loc.x + shark.width/2 && s.loc.y >= loc.y - shark.height/2 && s.loc.y <= loc.y + shark.height/2) { //if the person touches the shark
     s.alive = false; //kill the person by turning its show boolean off
+    win=false;
     o.over = true; //put the game over screen on 
   }
 
