@@ -22,7 +22,7 @@ void draw() {
     text("hahaha", width/2, height/2);
   }
   if (!mainscreen) {
-    if(gamelevel==0){
+    if(s1.gamelevel==0){
     if (mousePressed) {
       if (mouseX>3*width/4 && mouseY>3*height/4) {
         starth++;
