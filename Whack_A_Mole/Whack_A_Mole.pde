@@ -14,6 +14,7 @@ int mode;        //0 is the start screen. 1,3, and 5 are for playing. 2 and 4 ar
 int gamelevel;
 boolean papershow;        //declare booleans
 boolean mainscreen;
+boolean sap;        //spacealreadypressed
 
 void setup()
 {
@@ -28,6 +29,7 @@ void setup()
   a3 = new A();
   papershow = false;        //set papershow to false so it doesn't run in the beginning
   mainscreen = false;
+  sap = false;
   paperx = 200;
   papery = 260;
   mode = 0;
@@ -41,6 +43,7 @@ void draw()
   background(0);
   if (mode == 0 || mode == 2 || mode == 4)        //START SCREEN
   {
+    sap = false;
     fill(245, 100, 100);        //blue fill for instructions button
     ellipse(width/2, 4*height/5, 200, 200);        //instructions button
     fill(360);
@@ -69,6 +72,7 @@ void draw()
   textSize(50);
   if (mode == 1)        //LEVEL 1
   {
+    sap = true;
     background(0);
     fill(0, 100, 100);        //red fill
     text("Ready...", width/2, height/5);
@@ -89,6 +93,7 @@ void draw()
   if (mode == 3)        //LEVEL 2 (the same as level 1)
   {
     background(0);
+    sap = true;
     fill(0, 100, 100);
     text("Ready...", width/2, height/5);
     if (millis() - start2 >= delay)
@@ -106,6 +111,7 @@ void draw()
   }
   if (mode == 5)        //LEVEL 3
   {
+    sap = true;
     background(0);
     fill(0, 100, 100);
     text("Ready...", width/2, height/5);
@@ -198,31 +204,34 @@ void draw()
 
 void keyPressed()
 {
-  if (key == ' ')        //the space key is the start button 
+  if (sap==false)
   {
-    if (mode == 0)    //increase the mode
+    if (key == ' ')        //the space key is the start button 
     {
-      mode = 1;
-    }
-    if (mode == 2)
-    {
-      mode = 3;
-    }
-    if (mode == 4)
-    {
-      mode = 5;
-    }
-    if (mode == 1)
-    {
-      start1 = time;        //record the time when the space key is pressed (which is when the first level is started)
-    }
-    if (mode == 3)
-    {
-      start2 = time;        //record the time when the space key is pressed (which is when the second level is started)
-    }
-    if (mode == 5)
-    {
-      start3 = time;        //record the time when the space key is pressed (which is when the third level is started)
+      if (mode == 0)    //increase the mode
+      {
+        mode = 1;
+      }
+      if (mode == 2)
+      {
+        mode = 3;
+      }
+      if (mode == 4)
+      {
+        mode = 5;
+      }
+      if (mode == 1)
+      {
+        start1 = time;        //record the time when the space key is pressed (which is when the first level is started)
+      }
+      if (mode == 3)
+      {
+        start2 = time;        //record the time when the space key is pressed (which is when the second level is started)
+      }
+      if (mode == 5)
+      {
+        start3 = time;        //record the time when the space key is pressed (which is when the third level is started)
+      }
     }
   }
 }
