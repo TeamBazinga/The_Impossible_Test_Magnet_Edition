@@ -1,5 +1,5 @@
 Student s;
-Shark sh;
+ArrayList<Shark> sharks;
 Treasure t;
 Over o;
 
@@ -7,9 +7,15 @@ void setup() {
   colorMode(HSB, 360, 100, 100, 100);
   size(displayWidth, displayHeight);
   s = new Student();
-  sh = new Shark();
+  
+  sharks = new ArrayList<Shark>();
+  for(int i = 0; i< 6; i++)
+  {
+  sharks.add(new Shark());
+  }
   t = new Treasure();
   o = new Over();
+  
 }
 
 void draw() {
@@ -24,14 +30,23 @@ void draw() {
     s.display();
     s.move();
   }
-  sh.display();
-  sh.move();
+  
+  for( int i = sharks.size(); i >0; i--)
+  {
+    Shark bruce = sharks.get(i-1);
+    bruce.display();
+    bruce.move();
+    bruce.check(s,o);
+  }
+  
+  //sh.display();
+  //sh.move();
   t.display();
   t.check(s);
   if(o.over) {
   o.display();
   }
-  sh.check(s, o);
+  //sh.check(s, o);
   o.button(s);
 }
 
