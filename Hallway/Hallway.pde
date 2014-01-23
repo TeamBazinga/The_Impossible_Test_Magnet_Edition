@@ -56,3 +56,8 @@ void draw() {
   }
 }
 
+boolean sketchFullScreen() //full screen
+{
+  return true;
+}
+
