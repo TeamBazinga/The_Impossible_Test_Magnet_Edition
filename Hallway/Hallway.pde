@@ -1,4 +1,4 @@
-int r=425;
+int r=425;  //declare miscellaneous variables
 int wide=500;
 int high=500;
 int starth=0;
@@ -6,8 +6,8 @@ int rw1=450, rh1=450, rw2=300, rh2=375, rr3=75;
 boolean mainscreen;
 int gamelevel=0;
 
-Teacher t1;
-Student s1;
+Teacher t1; //defines teacher class
+Student s1;  //defines student class
 void setup() {
   mainscreen=false;
   t1 = new Teacher();
