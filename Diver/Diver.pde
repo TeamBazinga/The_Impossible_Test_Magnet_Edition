@@ -1,4 +1,4 @@
-Student s;
+ddddStudent s;
 ArrayList<Shark> sharks;
 Treasure t;
 Over o;
@@ -7,13 +7,12 @@ boolean win;
 void setup() {
   colorMode(HSB, 360, 100, 100, 100);
   size(displayWidth, displayHeight);
-  s = new Student();
-  
   sharks = new ArrayList<Shark>();
   for(int i = 0; i< 5; i++)
   {
   sharks.add(new Shark());
   }
+  s = new Student();
   t = new Treasure();
   o = new Over();
 }
