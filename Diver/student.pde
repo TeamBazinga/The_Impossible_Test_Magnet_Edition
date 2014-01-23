@@ -29,12 +29,16 @@ class Student { //start class for the diver
 
   void move() {   //move the diver in the direction indicated by a certain key
     if (keyPressed && key == 's') {
+      if(loc.y < height-height/7) { //dont let diver go beyond screen 
       loc.y += 4;
       right = true;
+      }
     } 
     if (keyPressed && key == 'w') {
+      if(loc.y > height/4 - 50d) { //dont let diver go beyond water line
       loc.y -= 4;
       right = true;
+      }
     }
     if (keyPressed && key == 'a') {
       loc.x -=4;
@@ -45,6 +49,7 @@ class Student { //start class for the diver
       loc.x += 4;
       right = true;
     }
+    
   }
 }
 
