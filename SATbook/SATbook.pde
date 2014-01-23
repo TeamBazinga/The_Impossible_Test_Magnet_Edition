@@ -1,6 +1,8 @@
+int level;
 Startscreen s;
 Teacherclick t;
 void setup(){
+  level=1;
   t = new Teacherclick() ;
   s= new Startscreen();
   size(displayWidth, displayHeight);
