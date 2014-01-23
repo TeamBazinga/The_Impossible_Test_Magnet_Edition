@@ -106,7 +106,7 @@ class Satbook {
     sat=loadImage("studyguide_web_cover2.png");//SAT book image
     sat.resize(int(sat.width*scale), int(sat.height*scale));
     l =new PVector(width/2, 100);//location
-    v =new PVector(random(-1, 1), random(0, -1));//velocity
+    v =new PVector(random(-0.8, 0.8), random(0, -1));//velocity
     a =new PVector(0, 0.0025);//acceleration
   }
   void load() {
