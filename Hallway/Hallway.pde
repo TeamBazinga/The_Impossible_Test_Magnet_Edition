@@ -55,6 +55,8 @@ void draw() {
       rect(width/2, height/2+height/12.5, rw2, rh2);
       fill(125, 100, 100);
       rect(width-width/8, height-height/8, rr3, rr3);
+      fill(125,100,100);
+      rect(width/8, height-height/8,rr3,rr3);
       t1.showt();
       s1.shows();
       s1.touch(t1);
