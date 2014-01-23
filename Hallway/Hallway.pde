@@ -35,7 +35,7 @@ void draw() {
         textSize(45);
         text("Click the box to start!", width/2, height/2);
         textSize(25);
-        text("Get to the red square, but dont touch the teachers!", width/2, height/2+height/8);
+        text("Get to the red square, \n but dont touch the teachers!", width/2, height/2+height/8);
       }
 
       if (starth>0) {
