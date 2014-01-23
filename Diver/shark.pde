@@ -4,7 +4,7 @@ class Shark {
 
   Shark() {
     shark = loadImage("shark.png");
-    loc = new PVector((random(width)), random(height - height/5));
+    loc = new PVector((random(width)), random(height/5, height-height/5));
 
   } 
 
@@ -16,7 +16,7 @@ class Shark {
     loc.x+=2;
     if (loc.x >= width) {
       loc.x = 0;
-      loc.y = random(height - height/4);
+      loc.y = random(height/5,height-height/5);
     }
   }
 //  void die(Student s) {

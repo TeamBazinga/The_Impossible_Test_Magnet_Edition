@@ -3,8 +3,8 @@ class Student { //start class for the diver
   PImage kid;   //declare variables needed
   PImage kidLeft;
   PVector loc, vel, acc;
-  float scale = .4;
-  float scale1 = 1.05;
+  float scale = .342857142;
+  float scale1 = 1;
   boolean right = true;
   boolean alive = true;
 

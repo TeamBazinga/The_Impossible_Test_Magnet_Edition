@@ -2,6 +2,7 @@ Student s;
 ArrayList<Shark> sharks;
 Treasure t;
 Over o;
+boolean win;
 
 void setup() {
   colorMode(HSB, 360, 100, 100, 100);
@@ -9,13 +10,12 @@ void setup() {
   s = new Student();
   
   sharks = new ArrayList<Shark>();
-  for(int i = 0; i< 6; i++)
+  for(int i = 0; i< 5; i++)
   {
   sharks.add(new Shark());
   }
   t = new Treasure();
   o = new Over();
-  
 }
 
 void draw() {
@@ -43,6 +43,11 @@ void draw() {
   //sh.move();
   t.display();
   t.check(s);
+  if(t.show==true && s.loc.y ==(height/5))
+  {
+    win = true;
+    println(win);
+  }
   if(o.over) {
   o.display();
   }

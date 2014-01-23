@@ -38,7 +38,7 @@ class Over {
         over = false; 
         s.loc.x = width/2;
         s.loc.y = height/5;
-        println(push);
+        
       }
 
       //      if (push = true) {
