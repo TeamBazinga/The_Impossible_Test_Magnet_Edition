@@ -44,8 +44,9 @@ class Teacherclick {
     fill(255, 229, 109);
     rect(width/2, height/2, width, height); 
     fill(0, 0, 0);
-    text("It's time for you to take the SAT, but you havn't studied at all! Fear not! \nThe weirdos over in the tech department have contructed a new machine capable of making you learn the information in a flash! \nJust make sure you hit the SAT books with you new catapult by clicking, but make sure they don't get to the bottom of the screen. \nThe machine only has a range of half the screen, and it might fail if it gets hit more than 3 times. \nYou can check your health at the top left of the screen and your score at the top right. \nGood luck! Only a 2400 will suffice. (This is Manget after all)", 100, 100);
-    text("Click to start",width/2, height/2);
+    textSize(40);
+    text("It's time for you to take the SAT, but you havn't studied at \nall! Fear not! The weirdos over in the tech department \nhave contructed a new machine capable of making you learn\nthe information in a flash! \nJust make sure you hit the SAT books with you new catapult by clicking,\nbut make sure they don't get to the bottom of the screen.\nThe machine only has a range of half the screen, and it \nmight fail if it gets hit more than 3 times. \nYou can check your health at the top left of the screen and \nyour score at the top right. \nGood luck! Only a 2400 will suffice. (This is Magnet after all)", 100, 100);
+    text("Click to start",width/2, height-50);
     if (mousePressed) {
       run=true;
     }
