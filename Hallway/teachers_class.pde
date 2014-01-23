@@ -12,7 +12,7 @@ class Teacher {
     rdrnw= width/2-width/3;
     loc1 = new PVector (width/2, height/2);
     loc2 = new PVector (width/2, height/2);
-    vel1 = new PVector (4, -4);
+    vel1 = new PVector (6, -6);
     d=25;
     o=40;
     h=d/1.5;

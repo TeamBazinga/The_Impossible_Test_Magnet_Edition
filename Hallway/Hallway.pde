@@ -19,7 +19,7 @@ void setup() {
 }
 void draw() {
   if (mainscreen) {
-    text("hahaha", width/2, height/2);
+    text("hahaha", width/2, height/2+200);
   }
   if (!mainscreen) {
     if (s1.gamelevel==0) {
