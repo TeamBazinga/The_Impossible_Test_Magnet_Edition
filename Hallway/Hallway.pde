@@ -4,6 +4,7 @@ int high=500;
 int starth=0;
 int rw1=450, rh1=450, rw2=300, rh2=375, rr3=75;
 boolean mainscreen;
+int gamelevel=0;
 
 Teacher t1;
 Student s1;
@@ -21,6 +22,7 @@ void draw() {
     text("hahaha", width/2, height/2);
   }
   if (!mainscreen) {
+    if(gamelevel==0){
     if (mousePressed) {
       if (mouseX>3*width/4 && mouseY>3*height/4) {
         starth++;
@@ -49,6 +51,7 @@ void draw() {
       t1.showt();
       s1.shows();
       s1.touch(t1);
+    }
     }
   }
 }
