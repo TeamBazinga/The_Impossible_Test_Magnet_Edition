@@ -13,8 +13,10 @@ void setup(){
 void draw()
 {
   s.load();
-//  t.instructions();
-//  t.display();
+  if(level==5){
+  t.instructions();
+  t.display();
+  }
 }
 
 boolean sketchFullScreen() {
