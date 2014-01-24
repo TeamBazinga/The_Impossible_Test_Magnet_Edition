@@ -1,4 +1,6 @@
 int level;
+boolean win;
+
 Startscreen s;
 Teacherclick t;
 void setup(){
@@ -9,6 +11,7 @@ void setup(){
   colorMode(HSB, 360, 100, 100, 100);
   rectMode(CENTER);
   textAlign(CENTER);
+  win= false;
 }
 void draw()
 {
