@@ -3,20 +3,20 @@ class Shark {
   PVector loc, vel, acc;
 
   Shark() {
-    shark = loadImage("shark.png");
-    loc = new PVector((random(width)), random(height/5, height-height/5));
+    shark = loadImage("shark.png"); //load image of shark
+    loc = new PVector((random(width)), random(height/5, height-height/5)); //shark has random width but must be in water
 
   } 
 
-  void display() {
+  void display() { //function for displaying the shark
     image(shark, loc.x, loc.y);
   }
 
-  void move() {
-    loc.x+=2;
-    if (loc.x >= width) {
+  void move() { //function for making shark move laterally
+    loc.x+=2; //move shark 2 ixels to the right
+    if (loc.x >= width) { //if the shark moves beyond the right of the screen
       loc.x = 0;
-      loc.y = random(height/5,height-height/5);
+      loc.y = random(height/5,height-height/5); //create a new shark on the left at random height
     }
   }
 //  void die(Student s) {
