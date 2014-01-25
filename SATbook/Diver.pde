@@ -109,7 +109,7 @@ class Student { //start class for the diver
   Student() {
     kid = loadImage("diver.png"); //image of diver
     kidLeft = loadImage("DiverLeft.png"); //image of diver facing left
-    loc = new PVector(random(width), height/5 - 20);
+    loc = new PVector(width/2, height/5 - 20);
     for (int i = 0; i< 5; i++) //if when the game first loads, a shark is on the diver, it moves so the diver doesn't die unfairly
     {
       Shark jo = sharks.get(i); 
@@ -121,7 +121,7 @@ class Student { //start class for the diver
           loc = new PVector(random(width), height/5);
         }
       }
-    }
+   }
     kid.resize(int(kid.width * scale), int(kid.height * scale)); //resize the diver
     kidLeft.resize(int(kid.width * scale1), int(kid.height * scale1)); //resize the diver that faces left
   }

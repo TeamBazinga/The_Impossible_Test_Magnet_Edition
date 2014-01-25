@@ -79,7 +79,7 @@ void draw()
       Shark bruce = sharks.get(i-1); //add another shark
       bruce.display(); //show the shark
       bruce.move(); //move the shark
-      bruce.check(stu, o); //check to see if diver is touching shark
+      //bruce.check(stu, o); //check to see if diver is touching shark
     }
 
 
