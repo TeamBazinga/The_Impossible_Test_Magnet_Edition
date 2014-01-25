@@ -7,7 +7,7 @@ Scoreboard s1;//printing score
 End e1;//end screen
 //int oldtime;//used as timer to calcualate time after game starts
 PImage For;//background forest
-int count;//used to find how many times replayed
+int count2;//used to find how many times replayed
 boolean start;//use of instructions
 
 class Raindropss {
@@ -27,7 +27,7 @@ class Raindropss {
     for (int i = 0; i < b.length; i++) {
       b[i] = new Bomb();
     }
-    count=1;
+    count2=1;
     start= false;
   }
   void load() {
@@ -49,7 +49,7 @@ class Raindropss {
         b[i].explode(c1);
         b[i].reset();
       }
-      count+=1;//add times played every run
+      count2+=1;//add times played every run
       for (int i=0; i < index;i++) {
         drops[i].load();
         drops[i].fall();
@@ -76,7 +76,7 @@ class Raindropss {
     if (keyPressed) { 
       //      start= true;
       //  oldtime=millis();//restart of timer
-      if (count>0) {
+      if (count2>0) {
         c1.score=0;
         for (int i=0; i < index;i++) {//location, velocity, and acceleration of candy reset
           drops[i].l= new PVector(random(width), 0);
@@ -93,7 +93,9 @@ class Raindropss {
         c1.HP=3;//health reset
       }
     }
-    if (c1.score>1500) {
+    if (c1.score>5500) {
+       start=false;//start over still start screen
+        c1.HP=3;//health reset
       level=10;
     }
   }

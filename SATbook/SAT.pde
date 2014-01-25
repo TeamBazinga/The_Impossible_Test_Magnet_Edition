@@ -16,6 +16,8 @@ float scale2;// resive of catapult
 PImage classroom;//classroom background
 float scale4;//resize background to fit screen
 int clicktime;//time between clicks
+boolean done;//check if all books gone after loss
+boolean winnin;//check if all books gone after win
 
 class Teacherclick {
 
@@ -26,17 +28,17 @@ class Teacherclick {
     click=false;
     oldtime=2000;
     r=100;
-    points=500;//initial score
+    points=2380;//initial score
     health=3;//health
     interval=500; 
     run=false;
     scale2= 0.125;
-//    scale3= 0.125;
+    //    scale3= 0.125;
     clicktime= 500; 
     catapult=loadImage("catapult.png");//catapult image
     catapult.resize(int(catapult.width*scale2), int(catapult.height*scale2));
-//    explosion=loadImage("explosion.png");//catapult image
-//    explosion.resize(int(explosion.width*scale2), int(explosion.height*scale2));
+    //    explosion=loadImage("explosion.png");//catapult image
+    //    explosion.resize(int(explosion.width*scale2), int(explosion.height*scale2));
     classroom=loadImage("classroom.jpg");
     classroom.resize(displayWidth, displayHeight);// make image full screen
   }
@@ -48,7 +50,8 @@ class Teacherclick {
     textAlign(LEFT);
     text("It's time for you to take the SAT, but you havn't studied at \nall! Fear not! The weirdos over in the tech department \nhave contructed a new machine capable of making you learn\nthe information in a flash! \nJust make sure you hit the SAT books with you new catapult by clicking,\nbut make sure they don't get to the bottom of the screen.\nThe machine only has a range of half the screen, and it \nmight fail if it gets hit more than 3 times. \nYou can check your health at the top left of the screen and \nyour score at the top right. \nGood luck! Only a 2400 will suffice. (This is Magnet after all)", 100, 100);
     textAlign(CENTER); 
-    text("Press Space to Start",width/2, height-25);
+    text("Press Space to Start", width/2, height-25);
+    done=false;
     if (keyPressed && key==' ') {
       run=true;
     }
@@ -72,31 +75,47 @@ class Teacherclick {
         c.move();
         c.die(i);
         c.scoreboard(i);
+
+        if (health<=0) {//gameover reason
+          book.remove(i);
+          //          c.l.y= height+1000;
+          if (book.size()==0) {
+            done=true;
+          }
+        }
+        if (points>=2400) {
+          book.remove(i);
+          if (book.size()==0) {
+            winnin= true;
+          }
+        }
+        c.away();
       }
 
       if (millis() -oldtime >=clicktime) {//aiming thing
         fill(0, 255, 120, 50);
-        ellipse(mouseX, mouseY, r, r);}
-        if (mousePressed && millis() -oldtime >=clicktime) {//click only allowed every 500 seconds 
-          click=true;
-          oldtime=millis();
-        }
-
-        //        if (mousePressed && millis() -oldtimeblow >=500) {
-        //          image(explosion, mouseX, mouseY, explosion.width, explosion.height);
-        //          oldtimeblow =millis();
-        //        }
-
-        else {//can't kill if not 500 seconds
-          click=false;
-        }
-//        if (millis() -oldtime <1500) {
-//          click=false;
-//        }
-        println(click);
+        ellipse(mouseX, mouseY, r, r);
       }
+      if (mousePressed && millis() -oldtime >=clicktime) {//click only allowed every 500 seconds 
+        click=true;
+        oldtime=millis();
+      }
+
+      //        if (mousePressed && millis() -oldtimeblow >=500) {
+      //          image(explosion, mouseX, mouseY, explosion.width, explosion.height);
+      //          oldtimeblow =millis();
+      //        }
+
+      else {//can't kill if not 500 seconds
+        click=false;
+      }
+      //        if (millis() -oldtime <1500) {
+      //          click=false;
+      //        }
+      println(click);
     }
   }
+}
 
 
 class Satbook {
@@ -126,6 +145,15 @@ class Satbook {
       points+=10;
     }
   }
+  void away() {
+    if (done) {//gameover reason
+      run= false;
+      health=3;
+      points= 500;
+      done=false;
+      level=9;
+    }
+  }
   void scoreboard(int i) {
     text(health, width-100, 100);//print health
     text(points, 100, 100);//print points
@@ -133,10 +161,12 @@ class Satbook {
       book.remove(i);//book go away when hit bottom
       health-=1;
     }
-    if (health<=0) {//gameover reason
-      level=9;
-    }
-    if (points>=2400) {//winning reason
+
+    if (winnin) {//winning reason
+      run= false;
+      health=3;
+      points= 500;
+      winnin=false;
       level=6;
     }
   }
