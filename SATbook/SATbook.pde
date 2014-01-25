@@ -16,12 +16,6 @@ boolean istime;//boolesn for if the shark game has started
 
 void setup() {
   sharks = new ArrayList<Shark>(); //initialize sharks array list
-  for (int i = 0; i< 5; i++) //add new sharks up to 5 sharks
-  {
-    sharks.add(new Shark());
-  }
-  stu = new Student(); //declare classes used 
-  tr = new Treasure();
   o = new Over();
   timer = 30000;
   level=1;
@@ -58,10 +52,17 @@ void draw()
     w.load();
   }
   if (level==4) { 
-    if(istime==false)//if countown hasnt started
+    rectMode(CENTER);
+    if (istime==false)//if countown hasnt started
     {
       istime=true;//start the timer
       sharktime=millis();// begin countdown
+      for (int i = 0; i< 5; i++) //add new sharks up to 5 sharks
+      {
+        sharks.add(new Shark());
+      }
+       stu = new Student();
+       tr = new Treasure();
     }
     noStroke();
     background(229, 70, 87);
@@ -79,16 +80,16 @@ void draw()
       Shark bruce = sharks.get(i-1); //add another shark
       bruce.display(); //show the shark
       bruce.move(); //move the shark
-      //bruce.check(stu, o); //check to see if diver is touching shark
+      bruce.check(stu, o); //check to see if diver is touching shark
     }
 
 
     tr.display(); //show the backpack
     tr.check(stu); //check if diver is touching backpack
-    if (tr.show==true && stu.loc.y ==(height/5)) //if the diver picked up the backpack and made it to the top of the water
+    if (tr.show==false && stu.loc.y ==(height/5)) //if the diver picked up the backpack and made it to the top of the water
     {
       win = true; //the diver wins
-      println(win);
+      level++;
     }
     if (o.over) { //if the diver lost
       o.display(); //show the game over screen
@@ -99,7 +100,7 @@ void draw()
     rectMode(LEFT);
     textAlign(LEFT);
     textSize(30);
-    rect(0, 75, ((millis()-sharktime)/30000)*200, 30); //rectangle that gets smaller as time runs out
+    rect(0, 75, ((30000-(millis()-sharktime))/150), 30); //rectangle that gets smaller as time runs out
     fill(54, 5, 74);
     text("Oxygen", 0, 65); //write oxygen on the box
     rectMode(CENTER);
@@ -107,9 +108,9 @@ void draw()
     {
       win= false; //winning boolean is on
       stu.alive=false; //the diver is no longer alive
-      o.over = true; //over screen shows up
+      //o.over = true; //over screen shows up
+      level=9;
     }
-    println(millis()-sharktime);
   }
 }
 

@@ -93,7 +93,8 @@ class Shark {
     if (s.loc.x >= loc.x - shark.width/2 && s.loc.x <= loc.x + shark.width/2 && s.loc.y >= loc.y - (shark.height/2 - 20) && s.loc.y <= loc.y + (shark.height/2+20)) { //if the person touches the shark
       s.alive = false; //kill the person by turning its show boolean off
       win=false;
-      o.over = true; //put the game over screen on
+      level=9;
+     //o.over = true; //put the game over screen on
     }
   }
 }
