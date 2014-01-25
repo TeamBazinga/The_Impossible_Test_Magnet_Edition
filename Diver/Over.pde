@@ -10,15 +10,15 @@ class Over {
   Over() {
     over = false; //start game with over false
     push = false;
-    bLoc = new PVector(width/2, height/2 + 200); //location of button
+    bLoc = new PVector(width/2, height/2 + 150); //location of button
   } 
 
   void display() {
     if (over) {
       rectMode(CENTER);
-      fill(255, 0, 0);
+      fill(229, 70, 87);
       //   rect(width/2, height/2, width, height); 
-      fill(0);
+      fill(209, 75, 91); //background color of game over screen
       rect(width/2, height/2, width, height);
       textAlign(CENTER);
       fill(255);

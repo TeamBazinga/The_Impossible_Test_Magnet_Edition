@@ -3,15 +3,15 @@ class Student { //start class for the diver
   PImage kid;   //declare variables needed
   PImage kidLeft;
   PVector loc, vel, acc;
-  float scale = .342857142;
-  float scale1 = 1;
+  float scale = .25; // .342857142;
+  float scale1 = 1; //1;
   boolean right = true;
   boolean alive = true;
 
   Student() {
     kid = loadImage("diver.png"); //image of diver
     kidLeft = loadImage("DiverLeft.png"); //image of diver facing left
-    loc = new PVector(random(width), height/5);
+    loc = new PVector(random(width), height/5 - 20);
     for (int i = 0; i< 5; i++) //if when the game first loads, a shark is on the diver, it moves so the diver doesn't die unfairly
     {
       Shark jo = sharks.get(i); 
