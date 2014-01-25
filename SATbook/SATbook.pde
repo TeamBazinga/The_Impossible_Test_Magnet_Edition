@@ -11,6 +11,8 @@ ArrayList<Shark> sharks;//declare an array list of sharks
 Treasure tr;
 Over o;
 float timer;
+int sharktime;
+boolean istime;//boolesn for if the shark game has started
 
 void setup() {
   sharks = new ArrayList<Shark>(); //initialize sharks array list
@@ -35,6 +37,7 @@ void setup() {
   win=true;
   //  win= false;//only lets level select if win once
   win2= false;
+  istime=false;
 }
 void draw()
 {
@@ -55,6 +58,11 @@ void draw()
     w.load();
   }
   if (level==4) { 
+    if(istime==false)//if countown hasnt started
+    {
+      istime=true;//start the timer
+      sharktime=millis();// begin countdown
+    }
     noStroke();
     background(229, 70, 87);
     fill(212, 56, 98);
@@ -91,17 +99,17 @@ void draw()
     rectMode(LEFT);
     textAlign(LEFT);
     textSize(30);
-    rect(0, 75, ((timer-millis())/30000)*200, 30); //rectangle that gets smaller as time runs out
+    rect(0, 75, ((millis()-sharktime)/30000)*200, 30); //rectangle that gets smaller as time runs out
     fill(54, 5, 74);
     text("Oxygen", 0, 65); //write oxygen on the box
     rectMode(CENTER);
-    if (millis() > timer) //game over if run out of time
+    if ((millis()-sharktime) > 30000) //game over if run out of time
     {
       win= false; //winning boolean is on
       stu.alive=false; //the diver is no longer alive
       o.over = true; //over screen shows up
     }
-    println(timer-millis());
+    println(millis()-sharktime);
   }
 }
 
