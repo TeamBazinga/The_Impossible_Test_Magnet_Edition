@@ -61,8 +61,8 @@ void draw()
       {
         sharks.add(new Shark());
       }
-       stu = new Student();
-       tr = new Treasure();
+      stu = new Student();
+      tr = new Treasure();
     }
     noStroke();
     background(229, 70, 87);
@@ -104,9 +104,10 @@ void draw()
     fill(54, 5, 74);
     text("Oxygen", 0, 65); //write oxygen on the box
     rectMode(CENTER);
+    textAlign(CENTER);
     if ((millis()-sharktime) > 30000) //game over if run out of time
     {
-      win= false; //winning boolean is on
+//      win= false; //winning boolean is on
       stu.alive=false; //the diver is no longer alive
       //o.over = true; //over screen shows up
       level=9;

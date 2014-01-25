@@ -2,6 +2,7 @@ class Loss {
   Loss() {
   }
   void load() {
+    rectMode(CENTER);
     textSize(20);
     background(0);
     text("You Lose!!", width/2, height/2);

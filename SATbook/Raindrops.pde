@@ -67,32 +67,35 @@ class Raindropss {
         }
       }
       if (c1.HP<=0) {//game over
+      start=false;//start over still start screen
+        c1.HP=3;//health reset
         level=9;
       }
     }
 
-    if (mousePressed) { 
-//      start= true;
+    if (keyPressed) { 
+      //      start= true;
       //  oldtime=millis();//restart of timer
-      //      if (count>1) {
-      //        c1.score=0;
-      //        for (int i=0; i < index;i++) {//location, velocity, and acceleration of candy reset
-      //          drops[i].l= new PVector(random(width), 0);
-      //          drops[i].v= new PVector(0, random(1, 2));
-      //          drops[i].a= new PVector(0, (random(0, 1)));
-      //        }
-      //        index= 1;
-      //        for (int i=0; i < b.length;i++) {//location, velocity, and acceleration of bombs reset
-      //          b[i].location= new PVector(random(width), 0);
-      //          b[i].ve= new PVector(0, random(1, 2));
-      //          b[i].a= new PVector(0, (random(0, 0.1)));
-      //          b[i].amax=0.1;
-      //        }
-      //        c1.HP=3;//health reset
-      //      }
+      if (count>0) {
+        c1.score=0;
+        for (int i=0; i < index;i++) {//location, velocity, and acceleration of candy reset
+          drops[i].l= new PVector(random(width), 0);
+          drops[i].v= new PVector(0, random(1, 2));
+          drops[i].a= new PVector(0, (random(0, 1)));
+        }
+        index= 50;
+        for (int i=0; i < b.length;i++) {//location, velocity, and acceleration of bombs reset
+          b[i].location= new PVector(random(width), 0);
+          b[i].ve= new PVector(0, random(1, 2));
+          b[i].a= new PVector(0, (random(0, 0.1)));
+          b[i].amax=0.1;
+        }
+        c1.HP=3;//health reset
+      }
     }
     if (c1.score>1500) {
       level=10;
     }
   }
 }
+
