@@ -2,6 +2,7 @@ ArrayList<car> traffic;
 int time;
 Myrtle_Frogger Myrtle;
 boolean start;
+boolean win;
 
 void setup()
 {
@@ -35,6 +36,17 @@ void draw()
     if(Myrtle.isdead(i)==true)
     {
       start=false;
+      car auto = traffic.get(i);
+      if(auto.c==color(60, 100, 100))
+      {
+        win = true;
+        println(win);
+      }
+      else
+      {
+        win = false;
+      }
+      
     }
     
       
