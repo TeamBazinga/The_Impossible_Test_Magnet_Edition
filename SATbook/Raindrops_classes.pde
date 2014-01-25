@@ -32,6 +32,7 @@ class Raindrops {
   PImage candy;
 
   Raindrops() {
+    size(displayWidth,displayHeight);
     l= new PVector(random(width), 0);
     v= new PVector(0, random(1, 2));
     a= new PVector(0, (random(0, 1)));
@@ -98,16 +99,19 @@ class Bomb {
   float scale;
   boolean blow;
   float amax;//acceleration maximum per run
+  float amaxmax;//maximum of maximum of acceleration 
   int run;
   Bomb() {
-    amax=0.1;
-    location= new PVector(random(width), 0);
-    ve= new PVector(0, random(1, 2));
-    a= new PVector(0, (random(0, amax)));
+    size(displayWidth,displayHeight);//make sure bomb drop full screen 
+    amax=0.1;//acceleration maximum 
+    location= new PVector(random(width), 0);//location
+    ve= new PVector(0, random(1, 2));//velocity
+    a= new PVector(0, (random(0, amax)));//acceleration
     blow=false;
     scale= 0.06;
-    bomb= loadImage("bomb.png");
+    bomb= loadImage("bomb.png");//load bomb image
     bomb.resize(int(bomb.width*scale), int(bomb.height*scale));
+    amaxmax= 1;
   }
   void load() {
 
@@ -129,8 +133,10 @@ class Bomb {
       location.y=0;
       location.x=random(width);
       ve= new PVector(0, random(1, 3));
-      a= new PVector(0, amax+=0.025);
-      //      println(amax);
+      if(a.y < amaxmax){// make sure acceleration isn't rediculous
+      a= new PVector(0, amax+=0.018);//acceleration maximum increases 
+      println(amax);
+      }
     }
   }
 

@@ -134,11 +134,10 @@ class Satbook {
       health-=1;
     }
     if (health<=0) {//gameover reason
-      //      println("GAMEOVER");
-      //        gameover;//************************************this needs to be fixed.
+      level=9;
     }
     if (points>=2400) {//winning reason
-      println("WIN");
+      level=6;
     }
   }
 }
