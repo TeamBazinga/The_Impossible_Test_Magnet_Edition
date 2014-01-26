@@ -4,6 +4,7 @@ Treasure t;
 Over o;
 boolean win;
 float timer;
+float currentTime;
 
 void setup() {
   colorMode(HSB, 360, 100, 100, 100); //set color mode to HSB
