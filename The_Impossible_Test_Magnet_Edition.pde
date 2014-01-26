@@ -3,10 +3,11 @@ int time;
 Myrtle_Frogger Myrtle;
 boolean start;
 boolean win;
-
+PImage Myrtlepic,bcl,bcr,rcl,rcr,ycl,ycr;
 void setup()
 {
   rectMode(CENTER);
+  imageMode(CENTER);
   colorMode(HSB, 360, 100, 100);
   size(displayWidth, displayHeight);
   traffic= new ArrayList<car>();
@@ -15,6 +16,13 @@ void setup()
   Myrtle = new Myrtle_Frogger();
   frameRate(30);
   start=true;
+  Myrtlepic = loadImage("Myrtle.png");
+  bcl= loadImage("blue-carL.png");
+  bcr= loadImage("blue-carR.png");
+  rcl= loadImage("red-carL.png");
+  rcr= loadImage("red-carR.png");
+  ycl= loadImage("yellow-carL.png");
+  ycr= loadImage("yellow-carR.png");
 }
 void draw()
 {
@@ -27,7 +35,7 @@ void draw()
       traffic.remove(i);
     }
   }
-  if (millis()-time>500)
+  if (millis()-time>900)
   {
     traffic.add(new car());
     time= millis();

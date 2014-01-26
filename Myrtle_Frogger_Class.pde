@@ -30,44 +30,42 @@ class Myrtle_Frogger
   }
   void display()
   {
-    fill(143,100,100);
-    ellipse(mloc.x, mloc.y, 40, 40);
+    image(Myrtlepic, mloc.x, mloc.y, 195, 110);
   }
   boolean isdead(int i)
   {
-      car auto = traffic.get(i);
-      if (abs(mloc.y - auto.cloc.y) <= 63 && abs(mloc.x - auto.cloc.x) <= 63)
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
+    car auto = traffic.get(i);
+    if (abs(mloc.y - auto.cloc.y) <= 63 && abs(mloc.x - auto.cloc.x) <= 63)
+    {
+      return true;
     }
-    
+    else
+    {
+      return false;
+    }
+  }
 }
 
 class car
 {
   PVector cloc, vel, acc;
   color c;
+  int direction = int(random(1, 3));
+  int ti=int(random(1, 4));
   car()
     //colorMode(HSB,360,100,100);
   {
-      rectMode(CENTER);
-    int direction = int(random(1, 3));
+    rectMode(CENTER);
     if (direction==1)
     {
-      cloc = new PVector(displayWidth+100, random(100, displayHeight-200));
+      cloc = new PVector(displayWidth+100, random(100, (displayHeight-100))/2);
       vel = new PVector(-6, 0);
     }
     if (direction==2)
     {
-      cloc = new PVector(-100, random(100, displayHeight-200));
+      cloc = new PVector(-100, random((displayHeight-100)/2, displayHeight-100));
       vel = new PVector(6, 0);
     }
-    int ti=int(random(1, 4));
     if (ti==3)
     {
       c=color(229, 94, 76);//blue
@@ -84,7 +82,30 @@ class car
   void display()
   {
     fill(c);
-    rect(cloc.x, cloc.y, 100, 100);
+    if (direction==1 && ti==1)
+    {
+      image(bcl, cloc.x, cloc.y);
+    }
+    if (direction==2 && ti==1)
+    {
+      image(bcr, cloc.x, cloc.y);
+    }
+    if (direction==1 && ti==2)
+    {
+      image(ycl, cloc.x, cloc.y);
+    }
+    if (direction==2 && ti==2)
+    {
+      image(bcr, cloc.x, cloc.y);
+    }
+    if (direction==1 && ti==3)
+    {
+      image(rcl, cloc.x, cloc.y);
+    }
+    if (direction==2 && ti==3)
+    {
+      image(rcr, cloc.x, cloc.y);
+    }
     cloc.add(vel);
   }
 }
