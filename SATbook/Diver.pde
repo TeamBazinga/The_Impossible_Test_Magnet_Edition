@@ -84,14 +84,14 @@ class Shark {
 
   void move() { //function for making shark move laterally
     loc.x+=2; //move shark 2 ixels to the right
-    if (loc.x >= width) { //if the shark moves beyond the right of the screen
-      loc.x = 0;
+    if (loc.x - shark.width/2 >= width) { //if the shark moves beyond the right of the screen
+      loc.x = -100;
       loc.y = random(height/5, height-height/5); //create a new shark on the left at random height
     }
   }
   //  void die(Student s) {
   void check(Student s, Over o) {
-    if (s.loc.x >= loc.x - shark.width/2 && s.loc.x <= loc.x + shark.width/2 && s.loc.y >= loc.y - (shark.height/2 - 20) && s.loc.y <= loc.y + (shark.height/2+20)) { //if the person touches the shark
+    if (s.loc.x >= (loc.x - shark.width/2+20) && s.loc.x <= (loc.x + shark.width/2-20) && s.loc.y >= (loc.y - shark.height/2 + 20) && s.loc.y <= (loc.y + shark.height/2-20)) { //if the person touches the shark
       s.alive = false; //kill the person by turning its show boolean off
 //      win=false;
       level=9;
@@ -152,13 +152,17 @@ class Student { //start class for the diver
       }
     }
     if (keyPressed && key == 'a') { //move diver left and switch to diver picture facing left
+    if(loc.x >= 0) {
       loc.x -=4;
       image(kidLeft, loc.x, loc.y);
       right = false;
     }
+    }
     if (keyPressed && key == 'd') { //move diver right
+    if(lox.x <= width) {
       loc.x += 4;
       right = true;
+    }
     }
   }
 }
