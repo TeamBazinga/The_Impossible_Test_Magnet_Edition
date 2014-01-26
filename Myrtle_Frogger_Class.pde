@@ -35,7 +35,7 @@ class Myrtle_Frogger
   boolean isdead(int i)
   {
     car auto = traffic.get(i);
-    if (abs(mloc.y - auto.cloc.y) <= 63 && abs(mloc.x - auto.cloc.x) <= 63)
+    if (abs(mloc.y - auto.cloc.y) <= 63 && abs(mloc.x - auto.cloc.x) <= 88)
     {
       return true;
     }

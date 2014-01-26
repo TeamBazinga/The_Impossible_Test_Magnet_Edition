@@ -3,7 +3,7 @@ int time;
 Myrtle_Frogger Myrtle;
 boolean start;
 boolean win;
-PImage Myrtlepic,bcl,bcr,rcl,rcr,ycl,ycr;
+PImage Myrtlepic,bcl,bcr,rcl,rcr,ycl,ycr,background;
 void setup()
 {
   rectMode(CENTER);
@@ -23,10 +23,11 @@ void setup()
   rcr= loadImage("red-carR.png");
   ycl= loadImage("yellow-carL.png");
   ycr= loadImage("yellow-carR.png");
+  background = loadImage("road.jpg");
 }
 void draw()
 {
-  background(0);
+  background(background);
   for (int i = traffic.size()-1; i >= 0; i--) {
     car auto = traffic.get(i);
     auto.display();
