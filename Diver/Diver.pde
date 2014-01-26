@@ -61,8 +61,7 @@ void draw() {
   fill(54,5,74);
   text("Oxygen",0,65); //write oxygen on the box
   rectMode(CENTER);
-  if(millis() > timer) //game over if run out of time
-  {
+  if(millis() > timer) { //game over if run out of tim 
     win= false; //winning boolean is on
     s.alive=false; //the diver is no longer alive
     o.over = true; //over screen shows up
