@@ -52,13 +52,17 @@ class Student { //start class for the diver
       }
     }
     if (keyPressed && key == 'a') { //move diver left and switch to diver picture facing left
+    if(loc.x >= 0) {
       loc.x -=4;
       image(kidLeft, loc.x, loc.y);
       right = false;
     }
+    }
     if (keyPressed && key == 'd') { //move diver right
+    if(loc.x <= width) {
       loc.x += 4;
       right = true;
+    }
     }
   }
 }
