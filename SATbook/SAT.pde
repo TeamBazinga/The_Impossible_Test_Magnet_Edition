@@ -28,7 +28,7 @@ class Teacherclick {
     click=false;
     oldtime=2000;
     r=100;
-    points=2380;//initial score
+    points=500;//initial score
     health=3;//health
     interval=500; 
     run=false;
@@ -146,9 +146,10 @@ class Satbook {
     }
   }
   void away() {
-    if (done) {//gameover reason
+    if (done) {//gameover reason reset all 
       run= false;
       health=3;
+       interval=500; 
       points= 500;
       done=false;
       level=9;
@@ -162,11 +163,12 @@ class Satbook {
       health-=1;
     }
 
-    if (winnin) {//winning reason
+    if (winnin) {//winning reason reset all
       run= false;
       health=3;
       points= 500;
       winnin=false;
+       interval=500; 
       level=6;
     }
   }
