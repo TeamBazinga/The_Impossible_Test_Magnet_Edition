@@ -12,7 +12,7 @@ Treasure tr;
 Over o;
 float timer;
 int sharktime;
-boolean istime;//boolesn for if the shark game has started
+boolean istime;//boolean for if the shark game has started
 
 void setup() {
   sharks = new ArrayList<Shark>(); //initialize sharks array list
