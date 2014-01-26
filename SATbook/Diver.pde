@@ -75,6 +75,7 @@ class Shark {
   Shark() {
     shark = loadImage("shark.png"); //load image of shark
     loc = new PVector((random(width)), random(height/5, height-height/5)); //shark has random width but must be in water
+    currentTime = millis();
   } 
 
   void display() { //function for displaying the shark
