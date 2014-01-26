@@ -92,8 +92,8 @@ void draw()
   }
   if (mode == 3)        //LEVEL 2 (the same as level 1)
   {
-    background(0);
     sap = true;
+    background(0);
     fill(0, 100, 100);
     text("Ready...", width/2, height/5);
     if (millis() - start2 >= delay)
@@ -155,6 +155,7 @@ void draw()
       if (mousePressed && dist(mouseX, mouseY, 4*width/5, 4*height/5-25) <= 112)
       {
         gamelevel++;
+        mode = start1 = start2 = start3 = end1 = end2 = end3 = 0    
       }
     }
     else
@@ -169,6 +170,7 @@ void draw()
       if (mousePressed && dist(mouseX, mouseY, 4*width/5, 4*height/5-25) <= 112)
       {
         mainscreen = true;
+        mode = start1 = start2 = start3 = end1 = end2 = end3 = 0
       }
     }
   }
@@ -204,11 +206,11 @@ void draw()
 
 void keyPressed()
 {
-  if (sap==false)
+  if (sap == false)
   {
     if (key == ' ')        //the space key is the start button 
     {
-      if (mode == 0)    //increase the mode
+      if (mode == 0)    //prevent the space bar from resetting the start time after the level has started
       {
         mode = 1;
       }
