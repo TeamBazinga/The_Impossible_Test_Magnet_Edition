@@ -33,7 +33,7 @@ void setup()
   Gatsby1= new Movie(this, "Gatsbyone.mov");
   Gatsby2 = new Movie(this, "Gatsbytwo.mov");
   Gatsby1.loop();//load first movie
-  istart=true;//all beginnings are false
+  istart=false;//all beginnings are false
   checktime=false;
   istart2=false;
 }
