@@ -17,15 +17,15 @@ class Startscreen {
       if (mousePressed && mouseY> height/2-65 && mouseY< height/2-15 && mouseX>width/2-150 && mouseX< width/2+150) {
         level=3;
       }
-      if (win) {//only go to level screen if win once
+     // if (win) {//only go to level screen if win once
         fill(360);
         rect(width/2, height/2+50, 300, 80);
         fill(0, 100, 200);
         text("Level Select", width/2, height/2+50);
-        if (mousePressed && mouseY< height/2+65 && mouseY> height/2+15 && mouseX>width/2-150 && mouseX< width/2+150 && win) {
+        if (mousePressed && mouseY< height/2+65 && mouseY> height/2+15 && mouseX>width/2-150 && mouseX< width/2+150) {
           level=2;
         }
-      }
+      //}
     }
     if (level==2) {
       background(360);

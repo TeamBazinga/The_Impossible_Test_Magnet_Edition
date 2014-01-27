@@ -15,6 +15,7 @@ float timer;
 float currentTime;
 boolean istime;//boolean for if the shark game has started
 WhackAMole wam;// wackamole
+boolean diddie;
 
 void setup() {
   sharks = new ArrayList<Shark>(); //initialize sharks array list
@@ -36,6 +37,7 @@ void setup() {
   //  win= false;//only lets level select if win once
   win2= false;
   istime=false;
+  diddie=false;
 }
 void draw()
 {
@@ -58,9 +60,9 @@ void draw()
   if (level==7) {
     wam.WAMload();
   }
-  if (level==3){
+  if (level==3) {
     rectMode(CENTER);
-      hallway.Hallwayload();
+    hallway.Hallwayload();
   }
   if (level==4) { 
     rectMode(CENTER);
@@ -68,12 +70,16 @@ void draw()
     {
       istime=true;//start the timer
       currentTime=millis();// begin countdown
-      for (int i = 0; i< 5; i++) //add new sharks up to 5 sharks
+      for(int i = sharks.size(); i >0; i--)
       {
-        sharks.add(new Shark());
+        sharks.remove(i-1);
       }
-      stu = new Student();
-      tr = new Treasure();
+        for (int i = 6; i> 0; i--) //add new sharks up to 5 sharks
+        {
+          sharks.add(new Shark());
+        }
+        stu = new Student();
+        tr = new Treasure();
     }
     noStroke();
     background(229, 70, 87);
