@@ -29,7 +29,7 @@ class Hallway {
             starth++;
           }
         }
-        if (starth == 0) {
+        if (starth == 0) {    //If hallway game is starting
           background(50, 100, 100);  
           fill(125, 100, 100);
           rect(500-500/8, 500-500/8, rr3, rr3);
@@ -40,7 +40,7 @@ class Hallway {
           text("Get to the other green square, \n but dont touch the teachers!", 500/2, 500/2+500/8);
         }
 
-        if (starth>0) {
+        if (starth>0) { //If game start is not up
           background(360, 0, 0);
           fill(360, 100, 100);
           rect(500/2, 500/2, rw1, rh1);
@@ -52,7 +52,7 @@ class Hallway {
           rect(500/8, 500-500/8, rr3, rr3);
           fill(0, 0, 100);
           text("Click the other \n green box.", 500/2, 500/2);
-          t1.showt();
+          t1.showt();       //Calls appropriate functions
           s1h.shows();
           s1h.touch(t1);
         }

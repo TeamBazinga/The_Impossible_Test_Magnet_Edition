@@ -1,5 +1,5 @@
-class Studenth {
-  float d, d2, o, tlth, rdrw, rdrnw;
+class Studenth { //Creates Studenth class
+  float d, d2, o, tlth, rdrw, rdrnw; //Defines needed varialbes
   int gamelevel=0;
   PVector loc;
   Studenth() {
@@ -12,18 +12,18 @@ class Studenth {
     loc = new PVector(mouseX, mouseY);
   }
 
-  void shows() {
+  void shows() { //Creates show() function
     loc = new PVector(mouseX, mouseY);
     fill(204, 53, 95);
     ellipse(loc.x, loc.y, d, d);
   }
 
-  void touch(Teacher t) {
-    if (loc.x+d/2>500-500/20 || loc.x-d/2<500/20 || loc.y+d/2>500-500/20 || loc.y-d/2<500/20 || (loc.x-d/2<500/2+rw2/2 && loc.x+d/2>500/2-rw2/2 && loc.y+d/2>100)) {
+  void touch(Teacher t) { //Creates touch() function
+    if (loc.x+d/2>500-500/20 || loc.x-d/2<500/20 || loc.y+d/2>500-500/20 || loc.y-d/2<500/20 || (loc.x-d/2<500/2+rw2/2 && loc.x+d/2>500/2-rw2/2 && loc.y+d/2>100)) { //If student touches wall
       level=9;
       starth=0;
     }
-    if (dist(loc.x, loc.y, t.loc2.x, tlth)< 20 || dist(loc.x, loc.y, t.loc1.x, (tlth)-o)< 20 || dist(loc.x, loc.y, rdrw, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrw+40, t.loc2.x)< 20 || dist(loc.x, loc.y, rdrnw-o, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrnw, t.loc2.x)< 20) {
+    if (dist(loc.x, loc.y, t.loc2.x, tlth)< 20 || dist(loc.x, loc.y, t.loc1.x, (tlth)-o)< 20 || dist(loc.x, loc.y, rdrw, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrw+40, t.loc2.x)< 20 || dist(loc.x, loc.y, rdrnw-o, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrnw, t.loc2.x)< 20) { //If student touches teacher
       level=9;
       starth=0;
     }
@@ -36,9 +36,9 @@ class Studenth {
 }
 
 
-class Teacher {
+class Teacher { //Creates Teacher class
 
-  float d, h;
+  float d, h; //Defines Variables
   PVector loc1, loc2;
   PVector vel1;
   float tlth,rdrw,rdrnw;
@@ -55,9 +55,9 @@ class Teacher {
     o=40;
     h=d/1.5;
   }
-  void showt() {
+  void showt() { //Creates showt() function
 
-    fill(125, 100, 100);
+    fill(125, 100, 100);                 //Displays teachers and gives their locations
     //top left
     ellipse(loc2.x, tlth, d, d);    
     //top right
@@ -85,12 +85,12 @@ class Teacher {
     //left up
     ellipse(rdrnw, loc2.x, h, h);
 
-    loc1.x+=vel1.x;
+    loc1.x+=vel1.x;         //Adds velocity to location
     loc2.x+=vel1.y;
     loc2.y-=vel1.y;
 
 
-    if (loc1.x>500-(500/4) || loc1.x <0+(500/4)) {
+    if (loc1.x>500-(500/4) || loc1.x <0+(500/4)) { //Bouncing
       vel1.x=-vel1.x;
       vel1.y=-vel1.y;
     }
