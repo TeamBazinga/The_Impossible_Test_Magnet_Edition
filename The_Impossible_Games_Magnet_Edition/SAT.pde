@@ -10,9 +10,9 @@ int time;//time between next book added changes
 float interval;//time between books coming in
 boolean run;//instruction screen on off
 PImage catapult;// catapult image
-float scale2;// resive of catapult
+float scale2;// resize of catapult
 //PImage explosion;// explosion image
-//float scale3;// resive scale of explosion
+//float scale3;// resize scale of explosion
 PImage classroom;//classroom background
 float scale4;//resize background to fit screen
 int clicktime;//time between clicks

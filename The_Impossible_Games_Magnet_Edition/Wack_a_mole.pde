@@ -38,7 +38,7 @@ class WhackAMole
     papery = 260;
     mode = 0;
     delay = 1000;
-    gamelevel = 0;        //CHANGE THIS TO CORRECT GAMELEVELJ LASJFOAIJSFOASI JFOAJFOEAIJFOAWIJF AOFJO FOAJ FAOWFJIOAEWJ
+    gamelevel = 0;        
   }
 
   void WAMload()
@@ -159,8 +159,8 @@ class WhackAMole
         text("NEXT\nLEVEL", 4*width/5, 4*height/5-25);
         if (mousePressed && dist(mouseX, mouseY, 4*width/5, 4*height/5-25) <= 112)
         {
-          level=8;
-          mode = start1 = start2 = start3 = end1 = end2 = end3 = 0;
+          level = 8;        //move onto next level in main game
+          mode = start1 = start2 = start3 = end1 = end2 = end3 = 0;        //reset values if game played again
         }
       }
       else
@@ -175,7 +175,7 @@ class WhackAMole
         if (mousePressed && dist(mouseX, mouseY, 4*width/5, 4*height/5-25) <= 112)
         {
           mode = start1 = start2 = start3 = end1 = end2 = end3 = 0;
-          level=1;
+          level = 1;        //go to main menu
         }
       }
     }
@@ -191,7 +191,7 @@ class WhackAMole
       }
       if (mode == 1)
       {
-        a1.show();
+        a1.show();        //show the A gradess
       }
       if (mode == 3)
       {
@@ -205,7 +205,6 @@ class WhackAMole
     score1 = end1 - start1 - delay;        //record the score for the first level (which is the end time minus the start time and the time before displaying the papers)
     score2 = end2 - start2 - delay;
     score3 = end3 - start3 - delay;
-    println(mode);
     h.show();        //display the hand
   }
 }
