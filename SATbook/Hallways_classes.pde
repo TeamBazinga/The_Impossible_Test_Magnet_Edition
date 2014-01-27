@@ -1,13 +1,13 @@
 class Studenth {
-  int d, d2, o, tlth, rdrw, rdrnw;
+  float d, d2, o, tlth, rdrw, rdrnw;
   int gamelevel=0;
   PVector loc;
   Studenth() {
     d=15;
-    rdrw = width/2+width/3;
-    rdrnw= width/2-width/3;
+    rdrw = 500/2+500/3;
+    rdrnw= 500/2-500/3;
     d2=25;
-    tlth=height/2-(height/3);
+    tlth=500/2-(166.66);
     o=40;
     loc = new PVector(mouseX, mouseY);
   }
@@ -19,15 +19,15 @@ class Studenth {
   }
 
   void touch(Teacher t) {
-    if (loc.x+d/2>width-width/20 || loc.x-d/2<width/20 || loc.y+d/2>height-height/20 || loc.y-d/2<height/20 || (loc.x-d/2<width/2+rw2/2 && loc.x+d/2>width/2-rw2/2 && loc.y+d/2>100)) {
-      hallwayscreen = true;
+    if (loc.x+d/2>500-500/20 || loc.x-d/2<500/20 || loc.y+d/2>500-500/20 || loc.y-d/2<500/20 || (loc.x-d/2<500/2+rw2/2 && loc.x+d/2>500/2-rw2/2 && loc.y+d/2>100)) {
+      level=9;
     }
     if (dist(loc.x, loc.y, t.loc2.x, tlth)< 20 || dist(loc.x, loc.y, t.loc1.x, (tlth)-o)< 20 || dist(loc.x, loc.y, rdrw, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrw+40, t.loc2.x)< 20 || dist(loc.x, loc.y, rdrnw-o, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrnw, t.loc2.x)< 20) {
-      hallwayscreen = true;
+      level=9;
     }
     if (mousePressed) {
-      if (loc.y-d2/2>width-100 && loc.x<width/2) {
-        gamelevel++;
+      if (loc.y-d2/2>500-100 && loc.x<500/2) {
+        level=4;
       }
     }
   }
@@ -43,11 +43,11 @@ class Teacher {
   float o;
   Teacher() {
     size(wide, high);
-    tlth = height/2-(height/3);
-    rdrw = width/2+width/3;
-    rdrnw= width/2-width/3;
-    loc1 = new PVector (width/2, height/2);
-    loc2 = new PVector (width/2, height/2);
+    tlth = 500/2-(500/3);
+    rdrw = 500/2+500/3;
+    rdrnw= 500/2-500/3;
+    loc1 = new PVector (500/2, 500/2);
+    loc2 = new PVector (500/2, 500/2);
     vel1 = new PVector (6, -6);
     d=25;
     o=40;
@@ -88,12 +88,12 @@ class Teacher {
     loc2.y-=vel1.y;
 
 
-    if (loc1.x>width-(width/4) || loc1.x <0+(width/4)) {
+    if (loc1.x>500-(500/4) || loc1.x <0+(500/4)) {
       vel1.x=-vel1.x;
       vel1.y=-vel1.y;
     }
 
-    if (loc1.y>height-(height/4) || loc1.y < 0 + (height/4)) {
+    if (loc1.y>500-(500/4) || loc1.y < 0 + (500/4)) {
       vel1.y=-vel1.y;
       vel1.x=-vel1.x;
     }

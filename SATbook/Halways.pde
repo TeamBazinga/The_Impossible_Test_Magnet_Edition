@@ -20,38 +20,38 @@ class Hallway {
   }
   void Hallwayload() {
     if (hallwayscreen) {
-      text("hahaha", width/2, height/2+200);
+      text("hahaha", 500/2, 500/2+200);
     }
     if (!hallwayscreen) {
       if (s1h.gamelevel==0) {
         if (mousePressed) {
-          if (mouseX>3*width/4 && mouseY>3*height/4) {
+          if (mouseX>3*500/4 && mouseY>3*500/4) {
             starth++;
           }
         }
         if (starth == 0) {
           background(50, 100, 100);  
           fill(125, 100, 100);
-          rect(width-width/8, height-height/8, rr3, rr3);
+          rect(500-500/8, 500-500/8, rr3, rr3);
           fill(0);
           textSize(45);
-          text("Click the box to start!", width/2, height/2);
+          text("Click the box to start!", 500/2, 500/2);
           textSize(25);
-          text("Get to the other green square, \n but dont touch the teachers!", width/2, height/2+height/8);
+          text("Get to the other green square, \n but dont touch the teachers!", 500/2, 500/2+500/8);
         }
 
         if (starth>0) {
           background(360, 0, 0);
           fill(360, 100, 100);
-          rect(width/2, height/2, rw1, rh1);
+          rect(500/2, 500/2, rw1, rh1);
           fill(0);
-          rect(width/2, height/2+height/12.5, rw2, rh2);
+          rect(500/2, 500/2+500/12.5, rw2, rh2);
           fill(125, 100, 100);
-          rect(width-width/8, height-height/8, rr3, rr3);
+          rect(500-500/8, 500-500/8, rr3, rr3);
           fill(125, 100, 100);
-          rect(width/8, height-height/8, rr3, rr3);
+          rect(500/8, 500-500/8, rr3, rr3);
           fill(0, 0, 100);
-          text("Click the other \n green box.", width/2, height/2);
+          text("Click the other \n green box.", 500/2, 500/2);
           t1.showt();
           s1h.shows();
           s1h.touch(t1);
