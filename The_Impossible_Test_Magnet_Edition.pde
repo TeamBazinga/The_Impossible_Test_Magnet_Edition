@@ -17,7 +17,7 @@ void setup()
   size(displayWidth, displayHeight);
   traffic= new ArrayList<car>();
   traffic.add(new car());//creat first car
-  time=0;//begin countdown
+  ctime=0;//begin countdown
   Myrtle = new Myrtle_Frogger();//myrtle character
   frameRate(30);//set frame rate
   start=true;//we have begun

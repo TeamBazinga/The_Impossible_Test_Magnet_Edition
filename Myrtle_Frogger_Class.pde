@@ -1,7 +1,7 @@
 class Myrtle_Frogger
 {
   PVector mloc;//myrtle location
-  int direction//direction movement
+  int direction;//direction movement
   Myrtle_Frogger()
   {
     mloc = new PVector(width/20, 50);//spawn myrtle
