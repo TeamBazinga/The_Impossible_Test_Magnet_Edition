@@ -25,6 +25,19 @@ class Loss {
       //sharks.remove(i);
       //println(sharks.size());
       //}
+      istart=false;//all beginnings are false
+  checktime=false;
+  istart2=false;
+  gstart=true;//we have begun
+  ctime=millis();//begin countdown
+  Myrtle.mloc = new PVector(width/20, 50);
+  //Gatsby2.loop();
+ // Gatsby2.noLoop();
+  Gatsby1.jump(0.0);
+  Gatsby1.pause();
+  Gatsby2.jump(0.0);
+  Gatsby2.pause();
+  //Gatsby1.noLoop();
     }
   }
 }
