@@ -28,7 +28,7 @@ class Teacherclick {
     click=false;
     oldtime=2000;
     r=100;
-    points=2380;//initial score
+    points=500;//initial score
     health=3;//health
     interval=500; 
     run=false;
