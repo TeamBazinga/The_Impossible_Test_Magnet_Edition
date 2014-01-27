@@ -1,7 +1,9 @@
+int oldytimers;
 class Loss {
   Loss() {
   }
-  void load() {
+  void load(Treasure t) {
+    oldytimers= millis();
     rectMode(CENTER);
     textSize(20);
     background(0);
@@ -11,15 +13,17 @@ class Loss {
     fill(360, 100, 100);
     text("Play Again", width/2, height/2+100);
     if (mousePressed && mouseX > width/2-150 && mouseX < width/2+150 && mouseY > height/2+70 && mouseY < height/2+130) {
-      level=1;
-      win=false;
-      tr.show=true;
-      stu.alive=true;
-      istime=false;
+      level=4;
+//      win=false;
+//      tr.show=true;
+//      stu.alive=true;
+//      istime=false;
+//      level=1;
+
       //for (int i = 6; i< 0; i--) //add new sharks up to 5 sharks
       //{
-        //sharks.remove(i);
-        //println(sharks.size());
+      //sharks.remove(i);
+      //println(sharks.size());
       //}
     }
   }

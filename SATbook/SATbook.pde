@@ -52,7 +52,7 @@ void draw()
     r1.load();
   }
   if (level==9) {
-    l.load();
+    l.load(tr);
   }
   if (level==10) {
     w.load();
@@ -65,21 +65,22 @@ void draw()
     hallway.Hallwayload();
   }
   if (level==4) { 
+
     rectMode(CENTER);
     if (istime==false)//if countown hasnt started
     {
       istime=true;//start the timer
       currentTime=millis();// begin countdown
-      for(int i = sharks.size(); i >0; i--)
+      for (int i = sharks.size(); i >0; i--)
       {
         sharks.remove(i-1);
       }
-        for (int i = 6; i> 0; i--) //add new sharks up to 5 sharks
-        {
-          sharks.add(new Shark());
-        }
-        stu = new Student();
-        tr = new Treasure();
+      for (int i = 6; i> 0; i--) //add new sharks up to 5 sharks
+      {
+        sharks.add(new Shark());
+      }
+      stu = new Student();
+      tr = new Treasure();
     }
     noStroke();
     background(229, 70, 87);
@@ -128,6 +129,14 @@ void draw()
       stu.alive=false; //the diver is no longer alive
       //o.over = true; //over screen shows up
       level=9;
+    }
+    if (millis()-oldytimers>2) {
+      oldytimers=100000000;
+      win=false;
+      tr.show=true;
+      stu.alive=true;
+      istime=false;
+      level=1;
     }
   }
 }
