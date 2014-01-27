@@ -40,7 +40,7 @@ void setup() {
   sharks = new ArrayList<Shark>(); //initialize sharks array list
   o = new Over();
   timer = 30000;
-  level=6;
+  level=1;
   r1= new Raindropss();
   t = new Teacherclick() ;
   s= new Startscreen();
