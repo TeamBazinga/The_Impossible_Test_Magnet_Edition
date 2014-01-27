@@ -56,7 +56,7 @@ void draw()
             istart2=true;
             Gatsby2.loop();
           }
-          if (millis()-g2time>28350)//end outro movie and progress to next level
+          if (millis()-g2time>28000)//end outro movie and progress to next level
           {
             gwin = true;
             Gatsby2.noLoop();
