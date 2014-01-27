@@ -19,7 +19,6 @@ boolean istime;//boolean for if the shark game has started
 WhackAMole wam;// wackamole
 boolean diddie;
 
-
 import ddf.minim.*;
 Minim minim;
 AudioPlayer player;
@@ -54,11 +53,11 @@ void draw()
 {
   if (startMusic) {
     player.play();
-    }
+  }
   if (startMusic == false) {
     player.rewind();
   }
-  if(level>1){
+  if (level>1) {
     startMusic=false;
   }
   println(millis()-oldytimers);
@@ -160,7 +159,6 @@ void draw()
       istime=false;
       level=1;
       startMusic=true;
-      
     }
   }
 }
