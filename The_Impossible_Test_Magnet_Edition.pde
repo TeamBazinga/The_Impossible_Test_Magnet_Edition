@@ -32,7 +32,6 @@ void setup()
   background.resize(displayWidth,displayHeight);
   Gatsby1= new Movie(this, "Gatsbyone.mov");
   Gatsby2 = new Movie(this, "Gatsbytwo.mov");
-  Gatsby1.loop();//load first movie
   istart=false;//all beginnings are false
   checktime=false;
   istart2=false;
@@ -100,6 +99,7 @@ void draw()
     {
       checktime=true;
       starttime=millis();//begin timer
+      Gatsby1.loop();
     }
     if (millis()-starttime> 31000)// if movie is over
     {
