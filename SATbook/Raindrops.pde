@@ -34,8 +34,10 @@ class Raindropss {
     if (!start) {
       background(0);
       textAlign(LEFT);
+      textSize(30);
       text("Munchlax is hungry! \nUse the cursor to move him to catch as many of the candies! \nBut watch out for the bombs! You only have 3 lives! \nYou need 5500 points to win!", 100, 100);
       textAlign(CENTER);
+      textSize(50);
       text("Press any key to continue", width/2, height/2);
       if (keyPressed) {
         start= true;

@@ -13,6 +13,7 @@ Over o;
 float timer;
 int sharktime;
 boolean istime;//boolean for if the shark game has started
+WhackAMole wam;// wackamole
 
 void setup() {
   sharks = new ArrayList<Shark>(); //initialize sharks array list
@@ -24,6 +25,7 @@ void setup() {
   s= new Startscreen();
   l= new Loss();
   w= new Win();
+  wam = new WhackAMole();
   size(displayWidth, displayHeight);
   colorMode(HSB, 360, 100, 100, 100);
   rectMode(CENTER);
@@ -50,6 +52,9 @@ void draw()
   }
   if (level==10) {
     w.load();
+  }
+  if (level==7) {
+    wam.WAMload();
   }
   if (level==4) { 
     rectMode(CENTER);
@@ -107,7 +112,7 @@ void draw()
     textAlign(CENTER);
     if ((millis()-sharktime) > 30000) //game over if run out of time
     {
-//      win= false; //winning boolean is on
+      //      win= false; //winning boolean is on
       stu.alive=false; //the diver is no longer alive
       //o.over = true; //over screen shows up
       level=9;
@@ -115,7 +120,39 @@ void draw()
   }
 }
 
-
+void keyPressed()
+{
+  if (sap == false)
+  {
+    if (key == ' ')        //the space key is the start button 
+    {
+      if (mode == 0)    //prevent the space bar from resetting the start time after the level has started
+      {
+        mode = 1;
+      }
+      if (mode == 2)
+      {
+        mode = 3;
+      }
+      if (mode == 4)
+      {
+        mode = 5;
+      }
+      if (mode == 1)
+      {
+        start1 = timewak;        //record the time when the space key is pressed (which is when the first level is started)
+      }
+      if (mode == 3)
+      {
+        start2 = timewak;        //record the time when the space key is pressed (which is when the second level is started)
+      }
+      if (mode == 5)
+      {
+        start3 = timewak;        //record the time when the space key is pressed (which is when the third level is started)
+      }
+    }
+  }
+}
 
 boolean sketchFullScreen() {
   return true;
