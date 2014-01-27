@@ -17,7 +17,13 @@ boolean istime;//boolean for if the shark game has started
 WhackAMole wam;// wackamole
 boolean diddie;
 
+import ddf.minim.*;
+Minim minim;
+AudioPlayer player;
+
 void setup() {
+  minim = new Minim(this);
+  player = minim.loadFile("killer.mp3");
   sharks = new ArrayList<Shark>(); //initialize sharks array list
   o = new Over();
   timer = 30000;
@@ -42,6 +48,7 @@ void setup() {
 }
 void draw()
 {
+   player.play();
   println(millis()-oldytimers);
   if (level==1 || level==2) {
     rectMode(CENTER);
