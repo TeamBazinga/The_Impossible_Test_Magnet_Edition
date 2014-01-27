@@ -21,9 +21,11 @@ class Studenth {
   void touch(Teacher t) {
     if (loc.x+d/2>500-500/20 || loc.x-d/2<500/20 || loc.y+d/2>500-500/20 || loc.y-d/2<500/20 || (loc.x-d/2<500/2+rw2/2 && loc.x+d/2>500/2-rw2/2 && loc.y+d/2>100)) {
       level=9;
+      starth=0;
     }
     if (dist(loc.x, loc.y, t.loc2.x, tlth)< 20 || dist(loc.x, loc.y, t.loc1.x, (tlth)-o)< 20 || dist(loc.x, loc.y, rdrw, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrw+40, t.loc2.x)< 20 || dist(loc.x, loc.y, rdrnw-o, t.loc2.y)< 20 || dist(loc.x, loc.y, rdrnw, t.loc2.x)< 20) {
       level=9;
+      starth=0;
     }
     if (mousePressed) {
       if (loc.y-d2/2>500-100 && loc.x<500/2) {
