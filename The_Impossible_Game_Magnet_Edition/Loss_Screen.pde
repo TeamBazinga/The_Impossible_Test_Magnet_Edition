@@ -12,13 +12,15 @@ class Loss {
     rect(width/2, height/2+100, 300, 60);
     fill(360, 100, 100);
     text("Play Again", width/2, height/2+100);
-    if (mousePressed && mouseX > width/2-150 && mouseX < width/2+150 && mouseY > height/2+70 && mouseY < height/2+130) {
+    
+    println(mousePressed && mouseX > width/2-150 && mouseX < width/2+150 && mouseY > height/2+70 && mouseY < height/2+130);
+    if (mousePressed && level==9) {
       level=4;
-//      win=false;
-//      tr.show=true;
-//      stu.alive=true;
-//      istime=false;
-//      level=1;
+      //      win=false;
+      //      tr.show=true;
+      //      stu.alive=true;
+      //      istime=false;
+      //      level=1;
 
       //for (int i = 6; i< 0; i--) //add new sharks up to 5 sharks
       //{

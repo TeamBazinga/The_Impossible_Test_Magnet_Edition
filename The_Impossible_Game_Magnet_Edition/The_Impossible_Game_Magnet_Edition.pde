@@ -57,7 +57,7 @@ void setup() {
   traffic.add(new car());//creat first car
   ctime=0;//begin countdown
   Myrtle = new Myrtle_Frogger();//myrtle character
-  frameRate(100);//set frame rate
+//  frameRate(100);//set frame rate
   starteri=true;//we have begun
   Myrtlepic = loadImage("Myrtle.png");
   bcl= loadImage("blue-carL.png");
@@ -79,8 +79,8 @@ void setup() {
   diddie=false;
   oldytimers=1000000;
 }
-void draw()
-{
+void draw(){
+//  println(mousePressed &&  mouseX > width/2-150 && mouseX < width/2+150 && mouseY > height/2+70 && mouseY < height/2+130);
   if (startMusic) { //if start screen is up, play start music
     player.play();
   }
@@ -90,7 +90,6 @@ void draw()
   if (level>1) {
     startMusic=false;
   }
-  println(mousePressed && mouseX > width/2-150 && mouseX < width/2+150 && mouseY > height/2+70 && mouseY < height/2+130);
   if (level==1 || level==2) {
     rectMode(CENTER);
     s.load();
@@ -103,7 +102,6 @@ void draw()
     r1.load();
   }
   if (level==9) {
-    frameRate(100);
     l.load();
   }
   if (level==10) {
@@ -128,7 +126,7 @@ void draw()
       for (int i = traffic.size()-1; i >= 0; i--) {
         if (Myrtle.isdead(i)==true)//check to see if myrtle is hit
         {
-          start=false;//end game
+          starteri=false;//end game
           car auto = traffic.get(i);//if car is yellow; you win; else; you lose
           if (auto.c==color(60, 100, 100))
           {
@@ -150,7 +148,7 @@ void draw()
           }
           else
           {
-            gwin = false;//if car is not yellow you lose
+            level=9;//if car is not yellow you lose
           }
         }
       }
