@@ -50,7 +50,7 @@ void setup() {
   win2= false;
   istime=false;
   diddie=false;
-  oldytimers=1000000;
+  oldytimers=100000000;
   
   rectMode(CENTER);
   imageMode(CENTER);
@@ -241,6 +241,7 @@ void draw()
   }
   if (istart==false)// if the first movie has not ended
   {
+    background(0);
     image(Gatsby1, width/2, height/2);//display first movie
     if (checktime==false)// if we have not started timer
     {

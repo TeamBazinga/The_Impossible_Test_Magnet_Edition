@@ -1,2 +1,0 @@
-Myrtle Frogger
-In this minigame, you play as Myrtle from the Great Gatsby during the sceen where Myrtle is hit by Gatsby's car. After an intro video, the game really begins with two lanes of traffic going both directions. The design aims to fool you into thinking that the objective is to get to the other side of the highway, but you can only win the game by being hit by Gatsvy's car ( the yellow car). At the end, an outro video plays and we continue on into the next game. 

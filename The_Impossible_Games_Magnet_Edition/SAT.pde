@@ -28,7 +28,7 @@ class Teacherclick {
     click=false;
     oldtime=2000;
     r=100;
-    points=500;//initial score
+    points=2380;//initial score
     health=3;//health
     interval=500; 
     run=false;
@@ -50,9 +50,9 @@ class Teacherclick {
     textAlign(LEFT);
     text("It's time for you to take the SAT, but you haven't studied at \nall! Fear not! The weirdos over in the tech department \nhave contructed a new machine capable of making you learn\nthe information in a flash! \nJust make sure you hit the SAT books with your new catapult by clicking,\nbut make sure they don't get to the bottom of the screen.\nThe machine only has a range of half the screen, and it \nmight fail if it gets hit more than 3 times. \nYou can check your health at the top left of the screen and \nyour score at the top right. \nGood luck! Only a 2400 will suffice. (This is Magnet after all)", 100, 100);
     textAlign(CENTER); 
-    text("Press Space to Start", width/2, height-25);
+    text("Press S to Start", width/2, height-25);
     done=false;
-    if (keyPressed && key==' ') {
+    if (keyPressed && key=='s') {
       run=true;
     }
   }
