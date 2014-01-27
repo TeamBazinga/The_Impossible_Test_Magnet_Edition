@@ -174,8 +174,8 @@ class WhackAMole
         text("MAIN\nSCREEN", 4*width/5, 4*height/5-25);
         if (mousePressed && dist(mouseX, mouseY, 4*width/5, 4*height/5-25) <= 112)
         {
-          mainscreen = true;
           mode = start1 = start2 = start3 = end1 = end2 = end3 = 0;
+          level=1;
         }
       }
     }

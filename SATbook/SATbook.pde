@@ -38,10 +38,12 @@ void setup() {
   win2= false;
   istime=false;
   diddie=false;
+  oldytimers=1000000;
 }
 void draw()
 {
   if (level==1 || level==2) {
+    rectMode(CENTER);
     s.load();
   }
   if (level==5) {
