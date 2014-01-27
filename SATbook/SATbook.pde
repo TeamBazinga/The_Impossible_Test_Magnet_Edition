@@ -42,6 +42,7 @@ void setup() {
 }
 void draw()
 {
+  println(millis()-oldytimers);
   if (level==1 || level==2) {
     rectMode(CENTER);
     s.load();

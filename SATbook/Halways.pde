@@ -25,7 +25,7 @@ class Hallway {
     if (!hallwayscreen) {
       if (s1h.gamelevel==0) {
         if (mousePressed) {
-          if (mouseX>3*500/4 && mouseY>3*500/4) {
+          if (mouseX>3*500/4 && mouseY>3*500/4 && mouseX<3*500/4+rr3 && mouseY<3*500/4+rr3) {
             starth++;
           }
         }
