@@ -13,15 +13,19 @@ Treasure tr;
 Over o;
 float timer;
 float currentTime;
+float startTime;
+boolean startMusic;
 boolean istime;//boolean for if the shark game has started
 WhackAMole wam;// wackamole
 boolean diddie;
+
 
 import ddf.minim.*;
 Minim minim;
 AudioPlayer player;
 
 void setup() {
+  startMusic=true;
   minim = new Minim(this);
   player = minim.loadFile("killer.mp3");
   sharks = new ArrayList<Shark>(); //initialize sharks array list
@@ -48,7 +52,15 @@ void setup() {
 }
 void draw()
 {
-   player.play();
+  if (startMusic) {
+    player.play();
+    }
+  if (startMusic == false) {
+    player.rewind();
+  }
+  if(level>1){
+    startMusic=false;
+  }
   println(millis()-oldytimers);
   if (level==1 || level==2) {
     rectMode(CENTER);
@@ -147,6 +159,8 @@ void draw()
       stu.alive=true;
       istime=false;
       level=1;
+      startMusic=true;
+      
     }
   }
 }
