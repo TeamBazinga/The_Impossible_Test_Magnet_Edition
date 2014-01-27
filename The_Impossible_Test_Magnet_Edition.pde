@@ -29,10 +29,11 @@ void setup()
   ycl= loadImage("yellow-carL.png");
   ycr= loadImage("yellow-carR.png");
   background = loadImage("road.jpg");
+  background.resize(displayWidth,displayHeight);
   Gatsby1= new Movie(this, "Gatsbyone.mov");
   Gatsby2 = new Movie(this, "Gatsbytwo.mov");
   Gatsby1.loop();//load first movie
-  istart=false;//all beginnings are false
+  istart=true;//all beginnings are false
   checktime=false;
   istart2=false;
 }
