@@ -12,7 +12,7 @@ ArrayList<Shark> sharks;//declare an array list of sharks
 Treasure tr;
 Over o;
 float timer;
-int sharktime;
+float currentTime;
 boolean istime;//boolean for if the shark game has started
 WhackAMole wam;// wackamole
 
@@ -111,7 +111,7 @@ void draw()
     rectMode(LEFT);
     textAlign(LEFT);
     textSize(30);
-    rect(0, 75, ((30000-(millis()-sharktime))/150), 30); //rectangle that gets smaller as time runs out
+    rect(0, 75, ((30000-(millis()-currentTime))/150), 30); //rectangle that gets smaller as time runs out
     fill(54, 5, 74);
     text("Oxygen", 0, 65); //write oxygen on the box
     rectMode(CENTER);
