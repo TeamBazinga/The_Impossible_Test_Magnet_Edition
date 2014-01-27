@@ -58,7 +58,7 @@ class car
     rectMode(CENTER);
     if (direction==1)
     {
-      cloc = new PVector(displayWidth+100, random(100, (displayHeight-100))/2);
+      cloc = new PVector(displayWidth+100, random(183, (displayHeight-100))/2);
       vel = new PVector(-6, 0);
     }
     if (direction==2)
