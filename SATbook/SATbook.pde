@@ -1,5 +1,6 @@
 Raindropss r1;
 int level;
+Hallway hallway;
 boolean win;//win boolean for entire game
 Loss l;
 Startscreen s;
@@ -24,6 +25,7 @@ void setup() {
   t = new Teacherclick() ;
   s= new Startscreen();
   l= new Loss();
+  hallway = new Hallway();
   w= new Win();
   wam = new WhackAMole();
   size(displayWidth, displayHeight);
@@ -55,6 +57,10 @@ void draw()
   }
   if (level==7) {
     wam.WAMload();
+  }
+  if (level==3){
+    rectMode(CENTER);
+      hallway.Hallwayload();
   }
   if (level==4) { 
     rectMode(CENTER);
