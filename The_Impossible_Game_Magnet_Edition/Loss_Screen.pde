@@ -2,7 +2,7 @@ int oldytimers;
 class Loss {
   Loss() {
   }
-  void load(Treasure t) {
+  void load() {
     oldytimers= millis();
     rectMode(CENTER);
     textSize(20);
