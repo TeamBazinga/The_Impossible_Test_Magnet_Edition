@@ -10,7 +10,7 @@ int score1, score2, score3, avgscore;
 int start1, start2, start3;
 int end1, end2, end3;
 int delay;
-int mode;        //0 is the start screen. 1,3, and 5 are for playing. 2 and 4 are for pausing in between levels
+int mode;        //0 is the start screen. 1, 3, and 5 are for playing. 2 and 4 are for pausing in between levels
 int gamelevel;
 boolean papershow;        //declare booleans
 boolean mainscreen;
