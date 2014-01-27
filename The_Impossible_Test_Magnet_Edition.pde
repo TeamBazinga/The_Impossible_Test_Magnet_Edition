@@ -1,14 +1,14 @@
-ArrayList<car> traffic;
-int time;
-Myrtle_Frogger Myrtle;
-boolean start;
-boolean win;
-PImage Myrtlepic, bcl, bcr, rcl, rcr, ycl, ycr, background;
-import processing.video.*;
-Movie Gatsby1, Gatsby2;
-boolean istart, istart2, checktime;
-int starttime;
-int g2time;
+ArrayList<car> traffic;//car arraylist
+int ctime;//car spawn timer
+Myrtle_Frogger Myrtle;//myrtle character
+boolean start;//has the game started/ended
+boolean gwin;//did you win
+PImage Myrtlepic, bcl, bcr, rcl, rcr, ycl, ycr, background;//pics
+import processing.video.*;//video library
+Movie Gatsby1, Gatsby2;//intro and outro videos
+boolean istart, istart2, checktime;//dis the videos start?
+int starttime;//time first vid started
+int g2time;//time second vid started
 void setup()
 {
   rectMode(CENTER);
@@ -16,11 +16,11 @@ void setup()
   colorMode(HSB, 360, 100, 100);
   size(displayWidth, displayHeight);
   traffic= new ArrayList<car>();
-  traffic.add(new car());
-  time=0;
-  Myrtle = new Myrtle_Frogger();
-  frameRate(30);
-  start=true;
+  traffic.add(new car());//creat first car
+  time=0;//begin countdown
+  Myrtle = new Myrtle_Frogger();//myrtle character
+  frameRate(30);//set frame rate
+  start=true;//we have begun
   Myrtlepic = loadImage("Myrtle.png");
   bcl= loadImage("blue-carL.png");
   bcr= loadImage("blue-carR.png");
@@ -31,90 +31,89 @@ void setup()
   background = loadImage("road.jpg");
   Gatsby1= new Movie(this, "Gatsbyone.mov");
   Gatsby2 = new Movie(this, "Gatsbytwo.mov");
-  Gatsby1.loop();
-  //Gatsby2.loop();
-  istart=false;
+  Gatsby1.loop();//load first movie
+  istart=false;//all beginnings are false
   checktime=false;
   istart2=false;
 }
 void draw()
 {
-  if (istart==true)
+  if (istart==true)//if the first movie has ended
   {
     imageMode(CENTER);
-    background(background);
+    background(background);//background image
     for (int i = traffic.size()-1; i >= 0; i--) {
-      if (Myrtle.isdead(i)==true)
+      if (Myrtle.isdead(i)==true)//check to see if myrtle is hit
       {
-        start=false;
-        car auto = traffic.get(i);
+        start=false;//end game
+        car auto = traffic.get(i);//if car is yellow; you win; else; you lose
         if (auto.c==color(60, 100, 100))
         {
-          if (istart2==false)
+          if (istart2==false)//if you win play outro movie
           {
             g2time=millis();
             istart2=true;
             Gatsby2.loop();
           }
-          if (millis()-g2time>41500)
+          if (millis()-g2time>41500)//end outro movie and progress to next level
           {
-            win = true;
+            gwin = true;
             Gatsby2.noLoop();
           }
           else
           {
-            image(Gatsby2, width/2, height/2);
+            image(Gatsby2, width/2, height/2);//disp;lay gatsby movie
           }
         }
         else
         {
-          win = false;
+          gwin = false;//if car is not yellow you lose
         }
       }
     }
 
 
-    if (start==true)
+    if (start==true)//if we have started
     {
-      for (int i = traffic.size()-1; i >= 0; i--) {
+      for (int i = traffic.size()-1; i >= 0; i--) {//add and subtract cars
         car auto = traffic.get(i);
-        auto.display();
-        if (auto.cloc.x > displayWidth+100 || auto.cloc.x<-100)
+        auto.display();//display cars
+        if (auto.cloc.x > displayWidth+100 || auto.cloc.x<-100)// if car leaves screen remove it
         {
           traffic.remove(i);
         }
       }
-      if (millis()-time>900)
+      if (millis()-ctime>900)//add car every 9/10 second
       {
         traffic.add(new car());
-        time= millis();
+        ctime= millis();
       }
       Myrtle.move();
-      Myrtle.display();
+      Myrtle.display();//move and display the controllable myrtle
     }
   }
-  if (istart==false)
+  if (istart==false)// if the first movie has not ended
   {
-    image(Gatsby1, width/2, height/2);
-    if (checktime==false)
+    image(Gatsby1, width/2, height/2);//display first movie
+    if (checktime==false)// if we have not started timer
     {
       checktime=true;
-      starttime=millis();
+      starttime=millis();//begin timer
     }
-    if (millis()-starttime> 228000)
+    if (millis()-starttime> 228000)// if movie is over
     {
       istart=true;
-      Gatsby1.noLoop();
+      Gatsby1.noLoop();//end movie
     }
   }
 }
 
 
-boolean sketchFullScreen() {
+boolean sketchFullScreen() {//make sketch full screen
   return true;
 }
 
-void movieEvent(Movie m)
+void movieEvent(Movie m)// display movie
 {
   m.read();
 }
