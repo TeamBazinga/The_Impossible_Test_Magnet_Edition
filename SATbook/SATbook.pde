@@ -67,7 +67,7 @@ void draw()
     if (istime==false)//if countown hasnt started
     {
       istime=true;//start the timer
-      sharktime=millis();// begin countdown
+      currentTime=millis();// begin countdown
       for (int i = 0; i< 5; i++) //add new sharks up to 5 sharks
       {
         sharks.add(new Shark());
@@ -116,7 +116,7 @@ void draw()
     text("Oxygen", 0, 65); //write oxygen on the box
     rectMode(CENTER);
     textAlign(CENTER);
-    if ((millis()-sharktime) > 30000) //game over if run out of time
+    if ((millis()-currentTime) > 30000) //game over if run out of time
     {
       //      win= false; //winning boolean is on
       stu.alive=false; //the diver is no longer alive
